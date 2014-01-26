@@ -1,0 +1,35 @@
+development:
+  host: "localhost:3000"
+  admin_email: "fguillen.mail@gmail.com"
+
+  smtp:
+    enabled: true
+    server: "smtp.mandrillapp.com"
+    port: 587
+    domain: "kontra_bando_film_festival.org"
+    user: "user"
+    pass: "pass"
+
+test:
+  host: "test.com"
+  admin_email: "kontra_bando_film_festival.mail@email.com"
+
+  smtp:
+    enabled: false
+
+production:
+  host: "kontra_bando_film_festival.org"
+  admin_email: "fguillen.mail@gmail.com"
+
+  s3_credentials:
+    bucket: "kontra_bando_film_festival_production"
+    access_key_id: "KEY"
+    secret_access_key: "SECRET"
+
+  smtp:
+    enabled: true
+    server: "smtp.mandrillapp.com"
+    port: 587
+    domain: "kontra_bando_film_festival.org"
+    user: "user"
+    pass: "pass"

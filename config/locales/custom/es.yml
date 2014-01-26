@@ -1,0 +1,8 @@
+es:
+  dictionary:
+    menu_brand: "KontraBandoFilmFestival Administración"
+
+  will_paginate:
+    previous_label: "&#8592; Anterior"
+    next_label: "Siguiente &#8594;"
+    page_gap: "&hellip;"

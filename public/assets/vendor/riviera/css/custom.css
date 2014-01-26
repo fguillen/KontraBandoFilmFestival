@@ -1,0 +1,11 @@
+.logo, .logo img {
+  width: 700px;
+}
+
+.logo h1 {
+  font-weight: bold;
+}
+
+.logo h3 {
+  margin-top: -25px
+}
