@@ -26,7 +26,7 @@ group :development do
   gem "capistrano"
   gem "capistrano-bundler"
   gem "capistrano-rails", "~> 1.1.0"
-  gem "capistrano-rbenv", github: "capistrano/rbenv"
+  gem "capistrano-rbenv", :github => "capistrano/rbenv"
 end
 
 group :test do
