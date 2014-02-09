@@ -8,7 +8,7 @@
           <div class="resize">
             <div class="cmsms_blog_media">
               <div class="resizable_block">
-                <%= @short_film_user.script_embed.html_safe %>
+                <%= @short_film_user.script_embed.html_safe if @short_film_user.script_embed %>
               </div>
             </div>
           </div>
