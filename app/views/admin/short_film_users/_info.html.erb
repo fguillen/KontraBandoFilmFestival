@@ -2,7 +2,7 @@
   <div class="panel-heading">Video</div>
   <div class="panel-body">
     <dl class="dl-horizontal">
-      <%= short_film_user.script_embed.html_safe %>
+      <%= short_film_user.script_embed.html_safe if short_film_user.script_embed %>
     </dl>
   </div>
 </div>
