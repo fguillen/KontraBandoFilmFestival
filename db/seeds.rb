@@ -1,20 +1,27 @@
 # coding: utf-8
 
 ActiveRecord::Base.transaction do
-  20.times do |index|
-    item =
-      Item.create!(
-        :title => "#{Faker::Lorem.sentence} – #{index}",
-        :text => Faker::Lorem.paragraphs.join("\n")
+  4.times do |index|
+    short_film_user =
+      ShortFilmUser.create!(
+        :title => Faker::Lorem.sentence,
+        :synopsis => Faker::Lorem.paragraphs.join("\n"),
+        :length_minutes => 10,
+        :length_seconds => 30,
+        :language => :spanish,
+        :genre => :action,
+        :credits_direction => Faker::Lorem.word,
+        :producer_name => Faker::Lorem.word,
+        :producer_dni => "111222333",
+        :producer_year_of_birth => 1990,
+        :producer_phone => "111222333",
+        :producer_email => "producer_#{n}@email.com",
+        :password => "pass",
+        :password_confirmation => "pass",
+        :thumbnail => File.open("#{Rails.root}/test/fixtures/pic.jpg")
       )
 
-    rand(10).times do |index|
-      item.pics.create!(
-        :attach => File.open("#{Rails.root}/test/fixtures/pic.jpg")
-      )
-    end
-
-    puts "Created item [#{item.id}] – #{item.title}"
+    puts "Created short_film_user [#{short_film_user.id}] – #{short_film_user.producer_email}"
   end
 
   email = "admin@email.com"

@@ -6,17 +6,27 @@ FactoryGirl.define do
     password_confirmation "pass"
   end
 
-  factory :item do
-    sequence(:title) { |n| "Item Title #{n}" }
-    text "The text"
-  end
-
-  factory :pic do
-    association :item
-    attach { File.new("#{Rails.root}/test/fixtures/pic.jpg") }
-  end
-
   factory :log_book_event, :class => LogBook::Event  do
     text "Wadus Event"
+  end
+
+  factory :short_film_user do
+    title "Short Film Title"
+    length_minutes 10
+    length_seconds 20
+    genre "action"
+    language "spanish"
+    credits_direction "Director Name"
+    synopsis "The Synopsis"
+    producer_name "The Producer Name"
+    producer_dni "The Producer DNI"
+    producer_year_of_birth 1900
+    producer_phone "9191919191"
+    sequence(:producer_email) { |n| "producer_#{n}@email.com" }
+
+    password "pass"
+    password_confirmation "pass"
+
+    thumbnail { File.new("#{Rails.root}/test/fixtures/pic.jpg") }
   end
 end

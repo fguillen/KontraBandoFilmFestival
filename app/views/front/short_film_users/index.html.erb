@@ -1,0 +1,20 @@
+<% title "Items" %>
+
+<div id="short_films_index">
+  <div class="row">
+    <% @short_film_users.each do |short_film_user| %>
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+          <div class="caption">
+            <h3><%= short_film_user.title %></h3>
+            <%= short_film_user.synopsis.truncate(150).to_md %>
+            <p><%= link_to "Details", [:front, short_film_user], :class => "btn btn-primary" %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+

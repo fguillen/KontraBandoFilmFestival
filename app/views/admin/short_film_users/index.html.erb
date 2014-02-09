@@ -1,0 +1,25 @@
+<% title "ShortFilmUsers" %>
+
+<div id="short_film_users">
+  <p><%= link_to "New ShortFilmUser", :new_admin_short_film_user, :class => "btn btn-default" %></p>
+
+  <table class="table table-striped table-hover sortable">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @short_film_users.each do |short_film_user| %>
+        <tr>
+          <td><%= link_to short_film_user.id, [:admin, short_film_user] %></td>
+          <td><%= short_film_user.title %></td>
+          <td><%= short_film_user.created_at.to_s(:datetimedb) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

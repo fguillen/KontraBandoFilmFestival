@@ -9,4 +9,13 @@ class Notifier < ActionMailer::Base
       :subject => "[KontraBandoFilmFestival] Password reset"
     )
   end
+
+  def short_film_user_reset_password(short_film_user)
+    @reset_password_link = short_film_reset_password_url(short_film_user.perishable_token, :host => APP_CONFIG[:host])
+
+    mail(
+      :to => short_film_user.email,
+      :subject => "[KontraBandoFilmFestival] Password reset"
+    )
+  end
 end

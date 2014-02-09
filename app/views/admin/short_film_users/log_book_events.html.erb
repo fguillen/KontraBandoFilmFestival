@@ -1,0 +1,4 @@
+<% title "ShortFilmUser > #{@short_film_user.title} > LogBook Events" %>
+
+<%= render :partial => "admin/short_film_users/menu", :locals => { :short_film_user => @short_film_user } %>
+<%= render :partial => "admin/log_book_events/list", :locals => { :log_book_events => @log_book_events } %>

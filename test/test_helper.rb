@@ -37,6 +37,11 @@ class ActiveSupport::TestCase
     @controller.stubs(:current_admin_user).returns(@admin_user)
   end
 
+  def setup_short_film_user
+    @short_film_user = FactoryGirl.create(:short_film_user)
+    @controller.stubs(:current_short_film_user).returns(@short_film_user)
+  end
+
   def assert_ids(array_1, array_2, message = nil)
     assert_equal(array_1.ids, array_2.ids)
   end

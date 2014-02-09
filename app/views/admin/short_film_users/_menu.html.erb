@@ -1,0 +1,12 @@
+<ul class="nav nav-tabs">
+  <li class="<%= admin_menu_class(:short_film_user_info) %>">
+    <%= link_to "Info", [:admin, short_film_user] %>
+  </li>
+
+  <li class="<%= admin_menu_class(:short_film_user_log_book_events) %>">
+    <%= link_to log_book_events_admin_short_film_user_path(short_film_user) do %>
+      LogBook Events
+      <span class="badge"><%= short_film_user.log_book_events.count %></span>
+    <% end %>
+  </li>
+</ul>
