@@ -131,170 +131,39 @@
               } );
             </script>
             <ul class="post_type_list portfolio_container responsiveContentSlider">
-              <li>
-                <article class="project format-album hentry one_fourth">
-                  <div class="project_inner">
-                    <div class="media_box">
-                      <figure>
-                        <a href="project.html" class="preloader">
-                          <img class="fullwidth" src="/assets/vendor/riviera/images/img/portfolio_4_1.jpg" alt="" />
-                        </a>
-                      </figure>
-                    </div>
-                    <header class="entry-header">
-                      <h5 class="entry-title">
-                        <a href="project.html">Mi cara</a>
-                      </h5>
-                    </header>
-                    <footer class="entry-meta">
-                      por <span class="cmsms_category"><a href="#">Juan Ramón Gimenez</a></span>
-                    </footer>
-                  </div>
-                </article>
-                <article class="project format-album hentry one_fourth">
-                  <div class="project_inner">
-                    <div class="media_box">
-                      <figure>
-                        <a href="project.html" class="preloader">
-                          <img class="fullwidth" src="/assets/vendor/riviera/images/img/portfolio_4_2.jpg" alt="" />
-                        </a>
-                      </figure>
-                    </div>
-                    <header class="entry-header">
-                      <h5 class="entry-title">
-                        <a href="project.html">Lo conseguiré</a>
-                      </h5>
-                    </header>
-                    <footer class="entry-meta">
-                      <span class="cmsms_category">por <a href="#">Anabel García</a></span>
-                    </footer>
-                  </div>
-                </article>
-                <article class="project format-album hentry one_fourth">
-                  <div class="project_inner">
-                    <div class="media_box">
-                      <figure>
-                        <a href="project.html" class="preloader">
-                          <img class="fullwidth" src="/assets/vendor/riviera/images/img/portfolio_4_3.jpg" alt="" />
-                        </a>
-                      </figure>
-                    </div>
-                    <header class="entry-header">
-                      <h5 class="entry-title">
-                        <a href="project.html">No somos nadie</a>
-                      </h5>
-                    </header>
-                    <footer class="entry-meta">
-                      <span class="cmsms_category">por <a href="#">Producciones Ariscas</a></span>
-                    </footer>
-                  </div>
-                </article>
-                <article class="project format-album hentry one_fourth">
-                  <div class="project_inner">
-                    <div class="media_box">
-                      <figure>
-                        <a href="project.html" class="preloader">
-                          <img class="fullwidth" src="/assets/vendor/riviera/images/img/portfolio_4_4.jpg" alt="" />
-                        </a>
-                      </figure>
-                    </div>
-                    <header class="entry-header">
-                      <h5 class="entry-title">
-                        <a href="project.html">Y si no quiero qué?</a>
-                      </h5>
-                    </header>
-                    <footer class="entry-meta">
-                      <span class="cmsms_category">por <a href="#">Pau Benitez</a></span>
-                    </footer>
-                  </div>
-                </article>
-              </li>
-              <li>
-                <article class="project format-album hentry one_fourth">
-                  <div class="project_inner">
-                    <div class="media_box">
-                      <figure>
-                        <a href="project.html" class="preloader">
-                          <img class="fullwidth" src="/assets/vendor/riviera/images/img/portfolio_4_8.jpg" alt="" />
-                        </a>
-                      </figure>
-                    </div>
-                    <header class="entry-header">
-                      <h5 class="entry-title">
-                        <a href="project.html">Si algún día te dije lo contrario no me acuerdo</a>
-                      </h5>
-                    </header>
-                    <footer class="entry-meta">
-                      <span class="cmsms_category">por <a href="#">Teodoro Gutierrez</a></span>
-                    </footer>
-                  </div>
-                </article>
-                <article class="project format-album hentry one_fourth">
-                  <div class="project_inner">
-                    <div class="media_box">
-                      <figure>
-                        <a href="project.html" class="preloader">
-                          <img class="fullwidth" src="/assets/vendor/riviera/images/img/portfolio_4_7.jpg" alt="" />
-                        </a>
-                      </figure>
-                    </div>
-                    <header class="entry-header">
-                      <h5 class="entry-title">
-                        <a href="project.html">Sin mirar</a>
-                      </h5>
-                    </header>
-                    <footer class="entry-meta">
-                      <span class="cmsms_category">por <a href="#">Victoria Pereira</a></span>
-                    </footer>
-                  </div>
-                </article>
-                <article class="project format-album hentry one_fourth">
-                  <div class="project_inner">
-                    <div class="media_box">
-                      <figure>
-                        <a href="project.html" class="preloader">
-                          <img class="fullwidth" src="/assets/vendor/riviera/images/img/portfolio_4_6.jpg" alt="" />
-                        </a>
-                      </figure>
-                    </div>
-                    <header class="entry-header">
-                      <h5 class="entry-title">
-                        <a href="project.html">Tierra 2015</a>
-                      </h5>
-                    </header>
-                    <footer class="entry-meta">
-                      <span class="cmsms_category">por <a href="#">Galoponte Unidos</a></span>
-                    </footer>
-                  </div>
-                </article>
-                <article class="project format-album hentry one_fourth">
-                  <div class="project_inner">
-                    <div class="media_box">
-                      <figure>
-                        <a href="project.html" class="preloader">
-                          <img class="fullwidth" src="/assets/vendor/riviera/images/img/portfolio_4_5.jpg" alt="" />
-                        </a>
-                      </figure>
-                    </div>
-                    <header class="entry-header">
-                      <h5 class="entry-title">
-                        <a href="project.html">Tira</a>
-                      </h5>
-                    </header>
-                    <footer class="entry-meta">
-                      <span class="cmsms_category">por <a href="#">Mariángeles Trenc</a></span>
-                    </footer>
-                  </div>
-                </article>
-              </li>
-            </ul>
+              <% ShortFilmUser.all.each_slice(4) do |short_film_users_slice| %>
+                <li>
+                  <% short_film_users_slice.each do |short_film_user| %>
+                    <article class="project format-album hentry one_fourth">
+                      <div class="project_inner">
+                        <div class="media_box">
+                          <figure>
+                            <%= link_to [:front, short_film_user], :class => "preloader" do %>
+                              <%= image_tag short_film_user.thumbnail(:front), :class => "fullwidth" %>
+                            <% end %>
+                          </figure>
+                        </div>
+                        <header class="entry-header">
+                          <h5 class="entry-title">
+                            <%= link_to short_film_user.title, [:front, short_film_user] %>
+                          </h5>
+                        </header>
+                        <footer class="entry-meta">
+                          por <span class="cmsms_category"><%= link_to short_film_user.producer_name, [:front, short_film_user] %></span>
+                        </footer>
+                      </div>
+                    </article>
+                  <% end %>
+                </li>
+              <% end %>
+            <ul>
           </div>
         </section>
       </div>
 
       <aside class="project_navi">
         <span class="fr">
-          <a href="#">Todos los cortos</a>
+          <%= link_to "Todos los cortos", :front_short_film_users %>
         </span>
       </aside>
 

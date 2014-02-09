@@ -1,7 +1,153 @@
-<% title "ShortFilmUser > #{@short_film_user.title}" %>
+<% title @short_film_user.title %>
 
+<section id="middle_content">
+  <div class="entry">
+    <section class="opened-article">
+      <article class="project format-video hentry">
+        <div class="project_content">
+          <div class="resize">
+            <div class="cmsms_blog_media">
+              <div class="resizable_block">
+                <%= @short_film_user.script_embed.html_safe %>
+              </div>
+            </div>
+          </div>
+          <h1 class="entry-title">Synopsis</h1>
+          <div class="entry-content">
+            <%= @short_film_user.synopsis.to_md %>
+          </div>
+        </div>
+        <div class="project_sidebar">
+          <footer class="entry-meta">
+            <ul class="cmsms_details">
+              <li>
+                <p class="cmsms_details_title cmsms_like_title">Like it?</p>
+                <div class="cmsms_details_links">
+                  <a class="cmsmsLike" href="#"><span><span>32</span></span></a>
+                </div>
+              </li>
+              <li>
+                <p class="cmsms_details_title">Received at:</p>
+                <div class="cmsms_details_links">
+                  <%= @short_film_user.created_at.to_s(:datehuman) %>
+                </div>
+              </li>
+              <li>
+                <p class="cmsms_details_title">Genere:</p>
+                <div class="cmsms_details_links">
+                  <%= @short_film_user.genre %>
+                </div>
+              </li>
+              <li>
+                <p class="cmsms_details_title">Duration:</p>
+                <div class="cmsms_details_links">
+                  <%= @short_film_user.duration %>
+                </div>
+              </li>
+              <li>
+                <p class="cmsms_details_title">Language:</p>
+                <div class="cmsms_details_links">
+                  <%= @short_film_user.language %>
+                </div>
+              </li>
+              <li>
+                <p class="cmsms_details_title">Director:</p>
+                <div class="cmsms_details_links">
+                  <%= @short_film_user.credits_direction %>
+                </div>
+              </li>
 
-<div class="row">
-  <div class="col-md-4"><%= @short_film_user.synopsis.to_md %></div>
-</div>
+              <li>
+                <p class="cmsms_details_title">Producer:</p>
+                <div class="cmsms_details_links">
+                  <%= @short_film_user.producer_name %>
+                </div>
+              </li>
+              <li class="cmsms_sharing">
+                <div class="fl">
+                  <div class="g-plusone" data-size="medium"></div>
+                  <script type="text/javascript">
+                    (function () {
+                      var po = document.createElement('script'),
+                        s = document.getElementsByTagName('script')[0];
 
+                      po.type = 'text/javascript';
+                      po.async = true;
+                      po.src = 'https://apis.google.com/js/plusone.js';
+
+                      s.parentNode.insertBefore(po, s);
+                    } )();
+                  </script>
+                </div>
+                <div class="fl">
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+                  <script type="text/javascript">
+                    !function (d, s, id) {
+                      var js = undefined,
+                        fjs = d.getElementsByTagName(s)[0];
+
+                      if (!d.getElementById(id)) {
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = '//platform.twitter.com/widgets.js';
+
+                        fjs.parentNode.insertBefore(js, fjs);
+                      }
+                    } (document, 'script', 'twitter-wjs');
+                  </script>
+                </div>
+                <div class="fl">
+                  <div class="fb-like" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false" data-font="arial"></div>
+                  <script type="text/javascript">
+                    (function (d, s, id) {
+                      var js = undefined,
+                        fjs = d.getElementsByTagName(s)[0];
+
+                      if (d.getElementById(id)) {
+                        return;
+                      }
+
+                      js = d.createElement(s);
+                      js.id = id;
+                      js.src = '//connect.facebook.net/en_US/all.js#xfbml=1';
+
+                      fjs.parentNode.insertBefore(js, fjs);
+                    } (document, 'script', 'facebook-jssdk'));
+                  </script>
+                </div>
+                <div class="cl"></div>
+                <a href="#" class="cmsms_share">More sharing options</a>
+                <div class="cmsms_social cl"></div>
+              </li>
+            </ul>
+          </footer>
+        </div>
+        <div class="cl"></div>
+      </article>
+      <div class="divider"></div>
+
+      <aside class="project_navi">
+        <span class="fl">
+          <a rel="prev" href="#"><span>Corto anterior</span></a>
+        </span>
+        <span class="fr">
+          <a rel="next" href="#"><span>Corto siguiente</span></a>
+        </span>
+      </aside>
+
+      <div class="divider"></div>
+      <aside class="about_author">
+        <h3>Sobre el director</h3>
+        <div class="about_author_box">
+          <figure class="alignleft">
+            <img class="avatar photo" src="images/img/gravatar.jpg" alt="cmsmasters" height='100' width='100'>
+          </figure>
+          <h5>Steven Masters (Steven Masters)</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada felis eget sapien viverra fringilla. Nullam placerat, odio quis condimentum, mi ligula venenatis tortor, in fermentum lacus augue sit amet enim.</p>
+        </div>
+      </aside>
+
+      <div class="cl"></div>
+    </section>
+  </div>
+</section>

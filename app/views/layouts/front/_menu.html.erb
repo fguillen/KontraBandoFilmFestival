@@ -1,19 +1,39 @@
-<nav class="navbar navbar-inverse" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex6-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <%= link_to "KontraBandoFilmFestival official website", :root, :class => "navbar-brand" %>
+<div class="wrap_nav">
+  <div class="wrap_responsive_nav">
+    <a class="responsive_nav" href="javascript:void(0);"><span></span></a>
   </div>
+  <nav>
+    <ul id="navigation">
+      <li class="<%= front_menu_class(:pages_home) %>">
+        <%= link_to front_page_path("home") do %>
+          <span>KBFF</span>
+        <% end %>
+      </li>
 
-  <div class="collapse navbar-collapse navbar-ex6-collapse">
-    <ul class="nav navbar-nav">
-      <li><%= link_to "Items", :front_items %></li>
-      <li><%= link_to "About", front_page_path("about") %></li>
-      <li><%= link_to "Login", :admin_login %></li>
+      <li class="<%= front_menu_class(:pages_about) %>">
+        <%= link_to front_page_path("about") do %>
+          <span>El festival</span>
+        <% end %>
+      </li>
+
+      <li class="<%= front_menu_class(:short_film_users) %>">
+        <%= link_to [:front, :short_film_users] do %>
+          <span>Los cortos</span>
+        <% end %>
+      </li>
+
+      <li class="<%= front_menu_class(:short_film_users_new) %>">
+        <%= link_to [:new, :short_film, :short_film_user] do %>
+          <span>Envía tu corto</span>
+        <% end %>
+      </li>
+
+      <li>
+        <a href="javascript:alert('Aquí va la URL del blog')">
+          <span>Blog</span>
+        </a>
+      </li>
     </ul>
-  </div><!-- /.navbar-collapse -->
-</nav>
+    <div class="cl"></div>
+  </nav>
+</div>

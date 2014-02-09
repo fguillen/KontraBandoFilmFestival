@@ -1,20 +1,42 @@
-<% title "Items" %>
+<% title "Los cortos" %>
 
-<div id="short_films_index">
-  <div class="row">
-    <% @short_film_users.each do |short_film_user| %>
-      <div class="col-sm-6 col-md-3">
-        <div class="thumbnail">
-          <div class="caption">
-            <h3><%= short_film_user.title %></h3>
-            <%= short_film_user.synopsis.truncate(150).to_md %>
-            <p><%= link_to "Details", [:front, short_film_user], :class => "btn btn-primary" %></p>
-          </div>
-        </div>
-      </div>
-    <% end %>
+
+<div class="pj_sort_block">
+  <div class="pj_options_loader" style="display: none;"></div>
+  <div class="pj_options_block" style="display: block;">
+    <div class="pj_sort">
+      <a class="button_small" href="#" title="Name" name="pj_name"><span>Título</span></a>
+      <a class="button_small current reversed" href="#" title="Date" name="pj_date"><span>Fecha</span></a>
+    </div>
+    <div class="cl"></div>
   </div>
-
 </div>
 
-
+<section id="middle_content">
+  <div class="entry-summary">
+    <section class="portfolio three_columns">
+      <% @short_film_users.each do |short_film_user| %>
+        <article class="project format-album hentry" data-category="<%= short_film_user.genre %>">
+          <div class="project_inner">
+            <div class="media_box">
+              <figure>
+                <%= link_to [:front, short_film_user], :class => "preloader" do %>
+                  <%= image_tag short_film_user.thumbnail(:front_medium), :class => "fullwidth" %>
+                <% end %>
+              </figure>
+            </div>
+            <header class="entry-header">
+              <h4 class="entry-title">
+                <%= link_to short_film_user.title, [:front, short_film_user] %>
+              </h4>
+            </header>
+            <footer class="entry-meta">
+              <span class="cmsms_category"><%= short_film_user.genre %></span>
+              <span class="meta-date"><%= short_film_user.created_at.to_i %></span>
+            </footer>
+          </div>
+        </article>
+      <% end %>
+    </section>
+  </div>
+</section>

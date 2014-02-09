@@ -1,16 +1,12 @@
-<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ex4-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to "KontraBandoFilmFestival", :root, :class => "navbar-brand" %>
-    </div>
-    <div class="navbar-collapse navbar-ex4-collapse collapse" style="height: 1px;">
-      <p class="navbar-text pull-right">contact <a href="mailto:kontra_bando_film_festival@email.com" class="navbar-link">skeleton@email.com</a></p>
-    </div>
+<footer id="footer">
+  <div class="footer_inner">
+    <span class="copyright">KontraBando Film Festival &copy; 2013</span>
+    <ul class="footer_nav">
+      <li><%= link_to "KBFF", front_page_path("home") %></li>
+      <li><%= link_to "El festival", front_page_path("about") %></li>
+      <li><%= link_to "Los cortos", [:front, :short_film_users] %></li>
+      <li><%= link_to "Envía tu corto", [:new, :short_film, :short_film_user] %></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
   </div>
-</nav>
+</footer>

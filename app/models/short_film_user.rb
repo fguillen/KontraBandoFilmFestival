@@ -57,8 +57,9 @@ class ShortFilmUser < ActiveRecord::Base
   validates :thumbnail, :attachment_presence => true
 
   ATTACH_STYLES = {
-    :front => "215x",
-    :front_big => "710x",
+    :front => "205x126#",
+    :front_medium => "287x177#",
+    :front_big => "600x",
     :admin => "303x203#"
   }
 
@@ -82,6 +83,10 @@ class ShortFilmUser < ActiveRecord::Base
 
   def to_param
     "#{id}-#{title.to_url}"
+  end
+
+  def duration
+    "%02d:%02d" % [length_minutes, length_seconds]
   end
 
 end

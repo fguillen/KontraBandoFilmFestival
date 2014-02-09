@@ -1,5 +1,5 @@
 KontraBandoFilmFestival::Application.routes.draw do
-  root :to => "front/short_film_users#index"
+  root :to => "front/pages#show", :id => "home"
 
   namespace :front do
     resources :pages, :only => [:show]

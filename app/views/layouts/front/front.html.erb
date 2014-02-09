@@ -18,21 +18,7 @@
       <div class="container set_fixed">
 <!-- __________________________________________________ Start Navigation -->
 
-        <div class="wrap_nav">
-          <div class="wrap_responsive_nav">
-            <a class="responsive_nav" href="javascript:void(0);"><span></span></a>
-          </div>
-          <nav>
-            <ul id="navigation">
-              <li class="current_page_item"><a href="/front/pages/home"><span>KBFF</span></a></li>
-              <li><a href="/front/pages/about"><span>El festival</span></a></li>
-              <li><a href="/front/pages/films"><span>Los cortos</span></a></li>
-              <li><a href="/front/pages/film_new"><span>Envía tu corto</span></a></li>
-              <li><a href="#"><span>Blog</span></a></li>
-            </ul>
-            <div class="cl"></div>
-          </nav>
-        </div>
+        <%= render :partial => "layouts/front/menu" %>
 <!-- __________________________________________________ Finish Navigation -->
 
 <!-- __________________________________________________ Start Header -->
@@ -98,18 +84,7 @@
 
 <!-- __________________________________________________ Start Footer -->
 
-      <footer id="footer">
-        <div class="footer_inner">
-          <span class="copyright">KontraBando Film Festival &copy; 2013</span>
-          <ul class="footer_nav">
-            <li><a href="/front/pages/home">KBFF</a></li>
-            <li><a href="/front/pages/about">El festival</a></li>
-            <li><a href="/front/pages/films">Los cortos</a></li>
-            <li><a href="/front/pages/film_new">Envía tu corto</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </div>
-      </footer>
+      <%= render :partial => "/layouts/front/footer" %>
 <!-- __________________________________________________ Finish Footer -->
 
     </section>
