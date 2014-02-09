@@ -15,10 +15,10 @@ module Admin::AdminHelper
   def admin_menu_class(actual_menu_name)
     menus = {
       :admin_users => ["/admin/admin_users.*"],
-      :items => ["/admin/items.*", "/admin"],
+      :short_film_users => ["/admin/short_film_users.*", "/admin"],
       :log_book_events => ["/admin/log_book_events"],
-      :item_log_book_events => ["/admin/items/.+/log_book_events"],
-      :item_info => ["/admin/items/[^/]+"]
+      :short_film_user_log_book_events => ["/admin/short_film_users/.+/log_book_events"],
+      :short_film_user_info => ["/admin/short_film_users/[^/]+"]
     }
 
     menu_class(menus, actual_menu_name)

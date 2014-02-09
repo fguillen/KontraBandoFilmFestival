@@ -15,7 +15,7 @@ ActiveRecord::Base.transaction do
         :producer_dni => "111222333",
         :producer_year_of_birth => 1990,
         :producer_phone => "111222333",
-        :producer_email => "producer_#{n}@email.com",
+        :producer_email => "producer_#{index}@email.com",
         :password => "pass",
         :password_confirmation => "pass",
         :thumbnail => File.open("#{Rails.root}/test/fixtures/pic.jpg")

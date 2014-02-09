@@ -4,7 +4,7 @@ class ShortFilmUser < ActiveRecord::Base
     c.validate_email_field = false
   end
 
-  FORMATS = [
+  GENRES = [
     :action,
     :adventure,
     :comedy,

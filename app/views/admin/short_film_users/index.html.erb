@@ -16,7 +16,7 @@
       <% @short_film_users.each do |short_film_user| %>
         <tr>
           <td><%= link_to short_film_user.id, [:admin, short_film_user] %></td>
-          <td><%= short_film_user.title %></td>
+          <td><%= link_to short_film_user.title, [:admin, short_film_user] %></td>
           <td><%= short_film_user.created_at.to_s(:datetimedb) %></td>
         </tr>
       <% end %>

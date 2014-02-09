@@ -1,8 +1,5 @@
 $(function(){
   console.log("admin.js");
 
-  _.templateSettings = {
-    interpolate : /\{\{([\s\S]+?)\}\}/g
-  };
-
+  $(".nice_file_field").niceFileField();
 });

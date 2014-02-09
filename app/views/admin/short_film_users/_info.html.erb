@@ -1,8 +1,69 @@
-<dl class="dl-horizontal">
-  <dt>Id</dt><dd><%= short_film_user.id %></dd>
-  <dt>Title</dt><dd><%= short_film_user.title %></dd>
-  <dt>Synopsis</dt><dd><%= short_film_user.synopsis.to_md %></dd>
-</dl>
+<div class="panel panel-default">
+  <div class="panel-heading">Video</div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <%= short_film_user.script_embed.html_safe %>
+    </dl>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Thumbnail</div>
+  <div class="panel-body">
+    <%= image_tag short_film_user.thumbnail(:admin) %>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Info</div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Id</dt><dd><%= short_film_user.id %></dd>
+      <dt>Title</dt><dd><%= short_film_user.title %></dd>
+      <dt>Duration</dt><dd><%= short_film_user.length_minutes %>:<%= short_film_user.length_seconds %></dd>
+      <dt>Language</dt><dd><%= short_film_user.language %></dd>
+      <dt>Subtitles</dt><dd><%= short_film_user.subtitles_language %></dd>
+      <dt>Genre</dt><dd><%= short_film_user.genre %></dd>
+    </dl>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Synopsis</div>
+  <div class="panel-body">
+    <%= short_film_user.synopsis.to_md %>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Credits</div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Direction</dt><dd><%= short_film_user.credits_direction %></dd>
+      <dt>Script</dt><dd><%= short_film_user.credits_script %></dd>
+      <dt>Camera</dt><dd><%= short_film_user.credits_camera %></dd>
+      <dt>Art Direction</dt><dd><%= short_film_user.credits_art_direction %></dd>
+      <dt>Editing</dt><dd><%= short_film_user.credits_editing %></dd>
+      <dt>Music</dt><dd><%= short_film_user.credits_music %></dd>
+      <dt>Other</dt><dd><%= short_film_user.credits_other %></dd>
+      <dt>Actors</dt><dd><%= short_film_user.credits_actors %></dd>
+    </dl>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Producer</div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Name</dt><dd><%= short_film_user.producer_name %></dd>
+      <dt>DNI</dt><dd><%= short_film_user.producer_dni %></dd>
+      <dt>Year of Birth</dt><dd><%= short_film_user.producer_year_of_birth %></dd>
+      <dt>Phone</dt><dd><%= short_film_user.producer_phone %></dd>
+      <dt>Email</dt><dd><%= short_film_user.producer_email %></dd>
+    </dl>
+  </div>
+</div>
+
 
 <p>
   <%= link_to "Edit", edit_admin_short_film_user_path(short_film_user) %> |
