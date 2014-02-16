@@ -29,7 +29,7 @@ class ShortFilm::ShortFilmUsersControllerTest < ActionController::TestCase
     )
 
     short_film_user = ShortFilmUser.last
-    assert_redirected_to [:short_film, short_film_user]
+    assert_redirected_to [:front, short_film_user]
 
     assert_equal("The Title", short_film_user.title)
     assert_match("front.jpg", short_film_user.thumbnail.url(:front))
@@ -66,7 +66,7 @@ class ShortFilm::ShortFilmUsersControllerTest < ActionController::TestCase
     )
 
     short_film_user.reload
-    assert_redirected_to [:short_film, short_film_user]
+    assert_redirected_to [:front, short_film_user]
     assert_not_nil(flash[:notice])
 
     short_film_user.reload

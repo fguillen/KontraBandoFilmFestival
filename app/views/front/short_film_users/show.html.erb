@@ -8,7 +8,11 @@
           <div class="resize">
             <div class="cmsms_blog_media">
               <div class="resizable_block">
-                <%= @short_film_user.script_embed.html_safe if @short_film_user.script_embed %>
+                <% if @short_film_user.script_embed %>
+                  <%= @short_film_user.script_embed.html_safe %>
+                <% else %>
+                  <%= image_tag @short_film_user.thumbnail(:front_big), :class => "fullwidth" %>
+                <% end %>
               </div>
             </div>
           </div>
@@ -115,9 +119,6 @@
                     } (document, 'script', 'facebook-jssdk'));
                   </script>
                 </div>
-                <div class="cl"></div>
-                <a href="#" class="cmsms_share">More sharing options</a>
-                <div class="cmsms_social cl"></div>
               </li>
             </ul>
           </footer>
@@ -128,23 +129,15 @@
 
       <aside class="project_navi">
         <span class="fl">
-          <a rel="prev" href="#"><span>Corto anterior</span></a>
+          <% if @short_film_user.previous %>
+            <%= link_to "Corto anterior", [:front, @short_film_user.previous] %>
+          <% end %>
         </span>
         <span class="fr">
-          <a rel="next" href="#"><span>Corto siguiente</span></a>
+          <% if @short_film_user.next %>
+            <%= link_to "Corto siguiente", [:front, @short_film_user.next] %>
+          <% end %>
         </span>
-      </aside>
-
-      <div class="divider"></div>
-      <aside class="about_author">
-        <h3>Sobre el director</h3>
-        <div class="about_author_box">
-          <figure class="alignleft">
-            <img class="avatar photo" src="images/img/gravatar.jpg" alt="cmsmasters" height='100' width='100'>
-          </figure>
-          <h5>Steven Masters (Steven Masters)</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada felis eget sapien viverra fringilla. Nullam placerat, odio quis condimentum, mi ligula venenatis tortor, in fermentum lacus augue sit amet enim.</p>
-        </div>
       </aside>
 
       <div class="cl"></div>

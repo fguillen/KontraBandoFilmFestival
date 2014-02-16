@@ -1,3 +1,4 @@
+<%= javascript_include_tag "/assets/app/front/js/home.js" %>
 
 <section id="middle_content">
   <div class="entry">
@@ -21,76 +22,6 @@
             </ul>
           </div>
         </div>
-        <script type="text/javascript">
-          var tpj=jQuery;
-
-          tpj.noConflict();
-
-          var revapi1;
-
-          tpj(document).ready(function() {
-
-            if (tpj.fn.cssOriginal != undefined)
-              tpj.fn.css = tpj.fn.cssOriginal;
-
-            if(tpj('#rev_slider_1_1').revolution == undefined)
-              revslider_showDoubleJqueryError('#rev_slider_1_1');
-            else
-               revapi1 = tpj('#rev_slider_1_1').show().revolution(
-              {
-                delay:9000,
-                startwidth:755,
-                startheight:580,
-                hideThumbs:0,
-
-                thumbWidth:100,
-                thumbHeight:50,
-                thumbAmount:3,
-
-                navigationType:"bullet",
-                navigationArrows:"nexttobullets",
-                navigationStyle:"round",
-
-                touchenabled:"on",
-                onHoverStop:"off",
-
-                navigationHAlign:"right",
-                navigationVAlign:"bottom",
-                navigationHOffset:0,
-                navigationVOffset:15,
-
-                soloArrowLeftHalign:"left",
-                soloArrowLeftValign:"center",
-                soloArrowLeftHOffset:0,
-                soloArrowLeftVOffset:0,
-
-                soloArrowRightHalign:"right",
-                soloArrowRightValign:"center",
-                soloArrowRightHOffset:0,
-                soloArrowRightVOffset:0,
-
-                shadow:0,
-                fullWidth:"on",
-                fullScreen:"off",
-
-                stopLoop:"off",
-                stopAfterLoops:-1,
-                stopAtSlide:-1,
-
-                shuffle:"off",
-
-                hideSliderAtLimit:0,
-                hideCaptionAtLimit:0,
-                hideAllCaptionAtLilmit:0,
-                startWithSlide:0,
-                videoJsPath:"http://riviera.cmsmasters.net/wp-content/plugins/revslider/rs-plugin/videojs/",
-                fullScreenOffsetContainer: ""
-              });
-
-          }); //ready
-
-        </script>
-
         <!-- END REVOLUTION SLIDER -->
 
       </div>
@@ -113,23 +44,6 @@
         <section id="portfolio_shortcode_1" class="post_type_shortcode">
           <div class="post_type_shortcode_inner">
             <h2>Últimos cortos recibidos</h2>
-            <script type="text/javascript">
-              jQuery(document).ready(function () {
-                jQuery('#portfolio_shortcode_1 .post_type_list').cmsmsResponsiveContentSlider( {
-                  sliderWidth : '100%',
-                  sliderHeight : 'auto',
-                  animationSpeed : 500,
-                  animationEffect : 'slide',
-                  animationEasing : 'easeInOutExpo',
-                  pauseTime : 0,
-                  activeSlide : 1,
-                  touchControls : true,
-                  pauseOnHover : false,
-                  arrowNavigation : true,
-                  slidesNavigation : false
-                } );
-              } );
-            </script>
             <ul class="post_type_list portfolio_container responsiveContentSlider">
               <% ShortFilmUser.all.each_slice(4) do |short_film_users_slice| %>
                 <li>
@@ -181,7 +95,7 @@
           sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
           sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
           no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
-          <a href="#" class="button_medium">Envía tu corto</a>
+          <%= link_to "Envía tu corto", [:new, :short_film, :short_film_user], :class => "button_medium" %>
         </div>
       </div>
 
@@ -190,15 +104,6 @@
       <div class="one_first first_column">
         <h2>Patrocinadores</h2>
         <div class="cmsms_clients_slider" id="cmsms_clients_slider55">
-          <script type="text/javascript">
-            jQuery(document).ready(function () {
-              jQuery('#cmsms_clients_slider55').cmsmsClientsSlider( {
-                sliderBlock : '#cmsms_clients_slider55',
-                sliderItems : '.cmsms_clients_items',
-                clientsInPage : 5
-              } );
-            } );
-          </script>
           <a href="javascript:void(0);" class="cmsms_clients_slider_arrow_prev"></a>
           <a href="javascript:void(0);" class="cmsms_clients_slider_arrow_next"></a>
           <ul class="cmsms_clients_items">

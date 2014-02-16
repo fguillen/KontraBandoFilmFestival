@@ -1,20 +1,13 @@
+<%= javascript_include_tag "/assets/app/front/js/short_film_user_form.js" %>
+
 <section id="content">
   <div class="entry">
     <div class="cmsms-form-builder">
-
-      <div class="box success_box">
-        <table>
-          <tr>
-            <td>&nbsp;</td>
-            <td>Thank You!<br>Your message has been sent successfully.</td>
-          </tr>
-        </table>
-      </div>
-
-      <p>Required fields are marked <span class="color_3">*</span></p>
-
       <%= form_for [:short_film, @short_film_user], :html => { :class => "form-horizontal", :id => "short_film_user_form" } do |f| %>
         <%= render "/shared/form_errors", :object => f.object %>
+
+
+        <p>Required fields are marked <span class="color_3">*</span></p>
 
         <h2>Info</h2>
 
@@ -24,8 +17,14 @@
         </div>
 
         <div class="form_info cmsms_input">
-          <label for="contact_name">Length minutes <span class="color_3">*</span></label>
-          <%= f.text_field :length_minutes, :class => "validate[required]", :size => "5", :placeholder => "00" %>
+          <label for="contact_name">Length <span class="color_3">*</span></label>
+          <div style="clear:both">
+            <%= f.text_field :length_minutes, :class => "validate[required]", :placeholder => "MM", :style => "float: left; width: 60px" %>
+            <span style="float: left; margin: 0 10px"> : </span>
+            <%= f.text_field :length_seconds, :class => "validate[required]", :placeholder => "SS", :style => "float: left; width: 60px" %>
+          </div>
+          <div style="clear:both" />
+          <br />
         </div>
 
         <div class="form_info cmsms_select">
@@ -53,10 +52,14 @@
 
         <h2>Thumbnail</h2>
 
+        <% if @short_film_user.thumbnail.exists? %>
+          <%= image_tag @short_film_user.thumbnail(:admin) %>
+        <% end %>
+
         <div class="form_info cmsms_input">
-          <label for="contact_name">Image <span class="color_3">*</span></label>
+          <label for="contact_name">Thumbnail <span class="color_3">*</span></label>
           <br />
-          <%= f.file_field :thumbnail, :class => "validate[required]", :size => "22" %>
+          <%= f.file_field :thumbnail, :class => "validate[required]" %>
         </div>
 
         <h2>Script Embed</h2>
@@ -66,6 +69,84 @@
           <%= f.text_area :script_embed, :cols => "28", :rows => "6", :placeholder => "Script from youtube, vimeo, blip.tv, ..." %>
         </div>
 
+        <h2>Producer</h2>
+
+        <div class="form_info cmsms_input">
+          <label for="contact_name">Name <span class="color_3">*</span></label>
+          <%= f.text_field :producer_name, :class => "validate[required]" %>
+        </div>
+
+        <div class="form_info cmsms_input">
+          <label for="contact_email">Email <span class="color_3">*</span></label>
+          <%= f.text_field :producer_email, :class => "validate[required,custom[email]]", :size => "22" %>
+        </div>
+
+        <div class="form_info cmsms_input">
+          <label for="contact_email">Password <span class="color_3">*</span></label>
+          <%= f.password_field :password, :class => "validate[required]" %>
+        </div>
+
+        <div class="form_info cmsms_input">
+          <label for="contact_email">Password Confirmation <span class="color_3">*</span></label>
+          <%= f.password_field :password_confirmation, :class => "validate[required]" %>
+        </div>
+
+        <div class="form_info cmsms_input">
+          <label for="contact_name">DNI <span class="color_3">*</span></label>
+          <%= f.text_field :producer_dni, :class => "validate[required]" %>
+        </div>
+
+        <div class="form_info cmsms_select">
+          <label for="contact_name">Year of Birth <span class="color_3">*</span></label>
+          <br />
+          <%= f.select(:producer_year_of_birth, (1975..2013).to_a.reverse) %>
+        </div>
+
+        <div class="form_info cmsms_input">
+          <label for="contact_name">Phone <span class="color_3">*</span></label>
+          <%= f.text_field :producer_phone, :class => "validate[required]" %>
+        </div>
+
+        <h2>Credits</h2>
+
+        <div class="form_info cmsms_input">
+          <label for="contact_name">Direction <span class="color_3">*</span></label>
+          <%= f.text_field :credits_direction, :class => "validate[required]" %>
+        </div>
+
+        <div class="form_info cmsms_input">
+          <label for="contact_name">Camera</label>
+          <%= f.text_field :credits_camera %>
+        </div>
+
+        <div class="form_info cmsms_input">
+          <label for="contact_name">Art Direction</label>
+          <%= f.text_field :credits_art_direction %>
+        </div>
+
+        <div class="form_info cmsms_input">
+          <label for="contact_name">Editing</label>
+          <%= f.text_field :credits_editing %>
+        </div>
+
+        <div class="form_info cmsms_input">
+          <label for="contact_name">Music</label>
+          <%= f.text_field :credits_music, :size => "6" %>
+        </div>
+
+        <div class="form_info cmsms_input">
+          <label for="contact_name">Other</label>
+          <%= f.text_field :credits_other %>
+        </div>
+
+        <div class="cl"></div>
+        <div>
+          <%= f.submit "Send Short Film application", :class => "button" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
 
 
 <!--         <div class="form_info cmsms_input">
@@ -126,12 +207,3 @@
           <span class="db">Description goes here</span>
         </div>
         -->
-        <div class="cl"></div>
-        <div>
-          <input type="submit" />
-          <a href="#" class="button" id="contact_form_formsend" tabindex="8"><span>Send a message</span></a>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</section>

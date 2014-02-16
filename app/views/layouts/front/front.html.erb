@@ -70,6 +70,20 @@
         <section id="middle">
           <div class="middle_inner">
             <div class="content_wrap fullwidth">
+
+              <% flash.each do |type, message| %>
+                <div class="box <%= riviera_box_class(type) %>">
+                  <table>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td><%= BlueCloth.new(message).to_html.html_safe %></td>
+                    </tr>
+                  </table>
+                </div>
+
+                <br />
+              <% end %>
+
               <%= yield %>
             </div>
 <!-- __________________________________________________ Finish Content -->

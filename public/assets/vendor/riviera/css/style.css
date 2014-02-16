@@ -5540,7 +5540,10 @@ body.cmsms_black #bottom option,
 
 #commentform {padding-bottom:20px;}
 
-.cmsms-form-builder input[type="text"]{width:50%;}
+.cmsms-form-builder input[type="text"],
+.cmsms-form-builder input[type="password"]{
+	width:50%;
+}
 
 #commentform input[type="text"] {
 	float:left;

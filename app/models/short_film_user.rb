@@ -41,7 +41,7 @@ class ShortFilmUser < ActiveRecord::Base
 
   validates :title, :presence => true
   validates :length_minutes, :presence => true
-  validates :length_seconds, :presence => true
+  # validates :length_seconds, :presence => true
   validates :language, :presence => true
   validates :genre, :presence => true
   validates :credits_direction, :presence => true
@@ -87,6 +87,19 @@ class ShortFilmUser < ActiveRecord::Base
 
   def duration
     "%02d:%02d" % [length_minutes, length_seconds]
+  end
+
+  # Yep!, I know this can be optimized :)
+  def previous
+    short_film_users = ShortFilmUser.all
+    index = short_film_users.find_index(self)
+    index > 0 ? short_film_users[index - 1] : nil
+  end
+
+  def next
+    short_film_users = ShortFilmUser.all
+    index = short_film_users.find_index(self)
+    index < (short_film_users.length - 1) ? short_film_users[index + 1] : nil
   end
 
 end

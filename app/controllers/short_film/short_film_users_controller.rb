@@ -9,7 +9,7 @@ class ShortFilm::ShortFilmUsersController < ShortFilm::ShortFilmController
   def create
     @short_film_user = ShortFilmUser.new(params[:short_film_user])
     if @short_film_user.save
-      redirect_to [:short_film, @short_film_user], :notice => "Successfully created ShortFilmUser."
+      redirect_to [:front, @short_film_user], :notice => "Successfully created ShortFilmUser."
     else
       flash.now[:alert] = "Some error trying to create short_film_user."
       render :action => 'new'
@@ -21,7 +21,7 @@ class ShortFilm::ShortFilmUsersController < ShortFilm::ShortFilmController
 
   def update
     if @short_film_user.update_attributes(params[:short_film_user])
-      redirect_to [:short_film, @short_film_user], :notice  => "Successfully updated ShortFilmUser."
+      redirect_to [:front, @short_film_user], :notice  => "Successfully updated ShortFilmUser."
     else
       flash.now[:alert] = "Some error trying to update ShortFilmUser."
       render :action => 'edit'
