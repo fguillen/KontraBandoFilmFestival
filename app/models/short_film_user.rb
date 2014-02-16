@@ -71,6 +71,7 @@ class ShortFilmUser < ActiveRecord::Base
       :storage => :s3,
       :s3_credentials => APP_CONFIG[:s3_credentials],
       :path => "/assets/uploads/:rails_env/:id/:style.:extension",
+      :url => ":s3_domain_url"
     )
   else
     has_attached_file(
