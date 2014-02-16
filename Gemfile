@@ -4,7 +4,7 @@ gem "rails", "~> 4.0.2"
 gem "activerecord-session_store"
 gem "protected_attributes"
 
-gem "sqlite3"
+gem "mysql2"
 gem "json"
 gem "paperclip"
 gem "exception_notification"

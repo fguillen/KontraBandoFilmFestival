@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20140209152457) do
     t.string   "perishable_token"
   end
 
-  add_index "admin_users", ["perishable_token"], name: "index_admin_users_on_perishable_token"
+  add_index "admin_users", ["perishable_token"], name: "index_admin_users_on_perishable_token", using: :btree
 
   create_table "log_book_events", force: true do |t|
     t.integer  "historian_id"
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 20140209152457) do
     t.datetime "updated_at"
   end
 
-  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id"
-  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
+  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", using: :btree
+  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
   create_table "short_film_users", force: true do |t|
     t.string   "title",                  null: false
@@ -91,8 +91,8 @@ ActiveRecord::Schema.define(version: 20140209152457) do
     t.datetime "created_at"
   end
 
-  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
   create_table "tags", force: true do |t|
     t.string "name"
