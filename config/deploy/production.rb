@@ -1,7 +1,8 @@
 set :stage, :production
 set :rails_env, "production"
 set :branch, "production"
-role :app, "kontra_bando_film_festival.com"
-role :web, "kontra_bando_film_festival.com"
+role :app, "kontrabandofilmfestival.org"
+role :web, "kontrabandofilmfestival.org"
+set :deploy_to, "/home/www/kontrabandofilmfestival.org"
 
 

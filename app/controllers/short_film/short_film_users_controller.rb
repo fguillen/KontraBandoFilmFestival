@@ -1,5 +1,5 @@
 class ShortFilm::ShortFilmUsersController < ShortFilm::ShortFilmController
-  before_filter :require_short_film_user, :except => [:reset_password, :reset_password_submit]
+  before_filter :require_short_film_user, :except => [:new, :create, :reset_password, :reset_password_submit]
   before_filter :load_short_film_user, :only => [:show, :edit, :update, :destroy]
 
   def new
