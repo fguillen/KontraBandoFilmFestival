@@ -1,12 +1,12 @@
-<% title "Los cortos" %>
+<% title t("views.short_films.index.title") %>
 
 
 <div class="pj_sort_block">
   <div class="pj_options_loader" style="display: none;"></div>
   <div class="pj_options_block" style="display: block;">
     <div class="pj_sort">
-      <a class="button_small" href="#" title="Name" name="pj_name"><span>Título</span></a>
-      <a class="button_small current reversed" href="#" title="Date" name="pj_date"><span>Fecha</span></a>
+      <a class="button_small" href="#" title="Name" name="pj_name"><span><%= t("views.short_films.index.sort_button_title") %></span></a>
+      <a class="button_small current reversed" href="#" title="Date" name="pj_date"><span><%= t("views.short_films.index.date") %></span></a>
     </div>
     <div class="cl"></div>
   </div>

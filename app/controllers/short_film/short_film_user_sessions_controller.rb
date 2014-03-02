@@ -7,10 +7,10 @@ class ShortFilm::ShortFilmUserSessionsController < ShortFilm::ShortFilmControlle
     @short_film_user_session = ShortFilmUserSession.new(params[:short_film_user_session])
 
     if @short_film_user_session.save
-      flash[:notice] = "ShortFilm User authenticated!"
+      flash[:notice] = t("controllers.sessions.create.success")
       redirect_back_or_default [:front, current_short_film_user]
     else
-      flash[:alert] = "Not possible to authenticate"
+      flash[:alert] = t("controllers.sessions.create.success")
       render action: "new"
     end
   end

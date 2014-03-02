@@ -1,8 +1,172 @@
 es:
   dictionary:
     menu_brand: "KontraBandoFilmFestival Administración"
+    synopsis: "Sinopsis"
+
+  catalogs:
+    languages:
+      english: "Inglés"
+      spanish: "Español"
+      catalonian: "Catalán"
+      no_sound: "Mudo"
+      other: "Otro"
+
+    genres:
+      documentary: "Documental"
+      fiction: "Ficción"
+      anime: "Animación"
+      other: "Otro"
+
 
   will_paginate:
     previous_label: "&#8592; Anterior"
     next_label: "Siguiente &#8594;"
     page_gap: "&hellip;"
+
+  activerecord:
+
+    models:
+      admin_user: "Admin User"
+      short_film_user: "Corto"
+
+    attributes:
+
+      admin_user:
+        id: "Id"
+        name: "Name"
+        email: "Email"
+        created_at: "Created at"
+        updated_at: "Updated at"
+
+      short_film_user:
+        title: "Título"
+        length_minutes: "Duración (minutos)"
+        length_seconds: "Duración (segundos)"
+        length: "Duración"
+        language: "Idioma"
+        script_embed: "'Script embed' en plataforma de videos online"
+        subtitles_language: "Idioma de los subtitulos"
+        genre: "Género"
+        credits_direction: "Dirección"
+        credits_script: "Guión"
+        credits_camera: "Cámara"
+        credits_art_direction: "Direción de Arte"
+        credits_editing: "Edicción"
+        credits_music: "Música"
+        credits_other: "Otros"
+        credits_actors: "Actores"
+        synopsis: "Sinopsis"
+        producer_name: "Nombre del Productor"
+        producer_dni: "DNI del Productor"
+        producer_year_of_birth: "Año de nacimiento del Productor"
+        producer_phone: "Teléfono de contacto"
+        producer_email: "Email de contacto"
+        school_name: "Nombre de la escuela"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de la Contraseña"
+        thumbnail: "Imagen de promoción"
+        created_at: "Recibido el"
+
+
+
+  views:
+    menu:
+      home: "KBFF"
+      festival: "El Festival"
+      short_films: "Los Cortos"
+      send_your_short_film: "Envía tu Corto"
+      blog: "Blog"
+
+
+    pages:
+      about:
+        title: "El Festival"
+        sections:
+          the_festival:
+            title: "Una forma diferente de desarrollar la creatividad"
+            text: |
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+              et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+              ipsum dolor sit amet.
+
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+              et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+              ipsum dolor sit amet.
+
+          objectives:
+            title: "Objectivos"
+            text: |
+
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+              et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+              ipsum dolor sit amet.
+
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+              et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+              ipsum dolor sit amet.
+
+          rules:
+            title: "Las Bases"
+            text: |
+
+              1. Podrán participar realizadores de 13 a 18 anys de cualquier nacionalidad.
+              1. Tema libre. Cada autor puede presentar el número de cortos que desee.
+              1. Pueden ser en catalán, castellano o en cualquier otro idioma, que se tendrán que subtitular en catalán o castellano.
+              1. Los cortos tendrán una duración máxima de 10 minutos, incluyendo créditos , y ser de realización no anterior al 2013.
+              1. Para la inscripción deberá rellenarse la hoja de inscripción ( on line?) y se abonarán 15 euros (pendiente ver como) que se destinarán a los gastos del Festival y a contribuir en la campaña de digitalización del cine.
+              1. No se admitirán cortos con finalidad publicitaria, ni montajes parciales de material audiovisual con  derechos de autor.
+              1. Los cortos no podrán contener declaraciones, información o hechos que puedan denigrar o perjudicar a ninguna persona o grupo de personas.
+              1. Los 30 cortos más votados se proyectarán en el Festival. 25 seran votados por el público y 5 por el jurado.
+              1. El Festival se reserva el derecho de utilizar las obras seleccionadas para hacer difusión y promoción del Festival en futuras ediciones.
+              1. En caso de que el corto incorpore imágenes o voces de menores, se deberá rellenar una hoja de autorización firmada por el tutor legal de cada menor.
+
+    short_films:
+      index:
+        title: "Los cortos"
+        sort_button_title: "Ordenar por Título"
+        sort_button_date: "Ordenar por Fecha"
+
+      show:
+        synopsis: "Sinopsis"
+        button_short_film_preview: "Corto anterior"
+        button_short_film_next: "Corto siguiente"
+
+      new:
+        title: "Enviar tu Corto"
+        required_fields: "Los campos requiridos están marcados con"
+        send_button: "Enviar Corto"
+        title_info: "Detalles del corto"
+        title_thumbnail: "Imagen"
+        title_script_embed: "Video online"
+        title_producer: "Productor"
+        title_credits: "Créditos"
+
+
+
+  controllers:
+    application:
+      user_required: "Tienes que estar autenticado para acceder a esta página"
+
+    sessions:
+      create:
+        success: "Usuario autenticado con éxito"
+        error: "Algún error al intentar autenticar Usuario"
+
+    short_films:
+      create:
+        success: "Corto enviado con éxito"
+        error: "Algún error encontrado al intentar enviar Corto"
+
+      update:
+        success: "Corto actualizado con éxito"
+        error: "Algún error encontrado al intentar actualizar Corto"
+
+      password_reset:
+        success: "Password actualizada con éxito. Ya estás autenticado"
+        success: "Algún error encontrado al intentar actualizar password"
+
+

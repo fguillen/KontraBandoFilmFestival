@@ -10,7 +10,7 @@ class ShortFilm::ShortFilmController < ApplicationController
   def require_short_film_user
     unless current_short_film_user
       store_location
-      flash[:alert] = "You need to be authenticated to acccess this page"
+      flash[:alert] = t("controllers.application.user_required")
       redirect_to short_film_login_path
       return false
     end

@@ -9,9 +9,9 @@ class ShortFilm::ShortFilmUsersController < ShortFilm::ShortFilmController
   def create
     @short_film_user = ShortFilmUser.new(params[:short_film_user])
     if @short_film_user.save
-      redirect_to [:front, @short_film_user], :notice => "Successfully created ShortFilmUser."
+      redirect_to [:front, @short_film_user], :notice => t("controllers.short_films.create.success")
     else
-      flash.now[:alert] = "Some error trying to create short_film_user."
+      flash.now[:alert] = t("controllers.short_films.create.error")
       render :action => 'new'
     end
   end
@@ -21,9 +21,9 @@ class ShortFilm::ShortFilmUsersController < ShortFilm::ShortFilmController
 
   def update
     if @short_film_user.update_attributes(params[:short_film_user])
-      redirect_to [:front, @short_film_user], :notice  => "Successfully updated ShortFilmUser."
+      redirect_to [:front, @short_film_user], :notice  => t("controllers.short_films.update.success")
     else
-      flash.now[:alert] = "Some error trying to update ShortFilmUser."
+      flash.now[:alert] = t("controllers.short_films.update.error")
       render :action => 'edit'
     end
   end
@@ -37,10 +37,10 @@ class ShortFilm::ShortFilmUsersController < ShortFilm::ShortFilmController
 
     if @short_film_user.update_attributes(params[:short_film_user])
       ShortFilmUserSession.create(@short_film_user)
-      flash[:notice] = "Password reseted, you have been authenticated!"
+      flash[:notice] = t("controllers.short_films.reset_password.success")
       redirect_back_or_default short_film_root_path
     else
-      flash.now[:alert] = "Some errors trying to reset the password"
+      flash.now[:alert] = t("controllers.short_films.reset_password.errors")
       render :reset_password
     end
   end

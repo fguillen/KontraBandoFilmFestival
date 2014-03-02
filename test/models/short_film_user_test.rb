@@ -5,12 +5,12 @@ class ShortFilmUserTest < ActiveSupport::TestCase
     assert FactoryGirl.create(:short_film_user).valid?
   end
 
-  def test_duration
+  def test_length
     short_film_user = FactoryGirl.create(:short_film_user, :length_minutes => 1, :length_seconds => 2)
-    assert_equal("01:02", short_film_user.duration)
+    assert_equal("01:02", short_film_user.length)
 
     short_film_user = FactoryGirl.create(:short_film_user, :length_minutes => 100, :length_seconds => 20)
-    assert_equal("100:20", short_film_user.duration)
+    assert_equal("100:20", short_film_user.length)
   end
 
   def test_previous

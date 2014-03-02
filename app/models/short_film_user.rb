@@ -5,33 +5,18 @@ class ShortFilmUser < ActiveRecord::Base
   end
 
   GENRES = [
-    :action,
-    :adventure,
-    :comedy,
-    :crime,
-    :erotica,
-    :faction,
-    :fantasy,
-    :historical,
-    :horror,
-    :mystery,
-    :paranoid,
-    :philosophical,
-    :political,
-    :romance,
-    :saga,
-    :satire,
-    :science_fiction,
-    :slice_of_life,
-    :specultative,
-    :thriller,
-    :urban
+    :documentary,
+    :fiction,
+    :anime,
+    :other
   ]
 
   LANGUAGES = [
     :english,
     :spanish,
-    :catalonian
+    :catalonian,
+    :no_sound,
+    :other
   ]
 
   strip_attributes
@@ -86,7 +71,7 @@ class ShortFilmUser < ActiveRecord::Base
     "#{id}-#{title.to_url}"
   end
 
-  def duration
+  def length
     "%02d:%02d" % [length_minutes, length_seconds]
   end
 

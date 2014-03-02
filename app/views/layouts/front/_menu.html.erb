@@ -6,31 +6,31 @@
     <ul id="navigation">
       <li class="<%= front_menu_class(:pages_home) %>">
         <%= link_to front_page_path("home") do %>
-          <span>KBFF</span>
+          <span><%= t("views.menu.home") %></span>
         <% end %>
       </li>
 
       <li class="<%= front_menu_class(:pages_about) %>">
         <%= link_to front_page_path("about") do %>
-          <span>El festival</span>
+          <span><%= t("views.menu.festival") %></span>
         <% end %>
       </li>
 
       <li class="<%= front_menu_class(:short_film_users) %>">
         <%= link_to [:front, :short_film_users] do %>
-          <span>Los cortos</span>
+          <span><%= t("views.menu.short_films") %></span>
         <% end %>
       </li>
 
       <li class="<%= short_film_menu_class(:short_film_users_new) %>">
         <%= link_to [:new, :short_film, :short_film_user] do %>
-          <span>Envía tu corto</span>
+          <span><%= t("views.menu.send_your_short_film") %></span>
         <% end %>
       </li>
 
       <li>
         <a href="javascript:alert('Aquí va la URL del blog')">
-          <span>Blog</span>
+          <span><%= t("views.menu.blog") %></span>
         </a>
       </li>
     </ul>

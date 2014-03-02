@@ -16,7 +16,7 @@
               </div>
             </div>
           </div>
-          <h1 class="entry-title">Synopsis</h1>
+          <h1 class="entry-title"><%= t("dictionary.synopsis") %></h1>
           <div class="entry-content">
             <%= @short_film_user.synopsis.to_md %>
           </div>
@@ -31,38 +31,38 @@
                 </div>
               </li>
               <li>
-                <p class="cmsms_details_title">Received at:</p>
+                <p class="cmsms_details_title"><%= t("activerecord.attributes.short_film_user.created_at") %>:</p>
                 <div class="cmsms_details_links">
                   <%= @short_film_user.created_at.to_s(:datehuman) %>
                 </div>
               </li>
               <li>
-                <p class="cmsms_details_title">Genere:</p>
+                <p class="cmsms_details_title"><%= t("activerecord.attributes.short_film_user.genre") %>:</p>
                 <div class="cmsms_details_links">
                   <%= @short_film_user.genre %>
                 </div>
               </li>
               <li>
-                <p class="cmsms_details_title">Duration:</p>
+                <p class="cmsms_details_title"><%= t("activerecord.attributes.short_film_user.length") %>:</p>
                 <div class="cmsms_details_links">
-                  <%= @short_film_user.duration %>
+                  <%= @short_film_user.length %>
                 </div>
               </li>
               <li>
-                <p class="cmsms_details_title">Language:</p>
+                <p class="cmsms_details_title"><%= t("activerecord.attributes.short_film_user.language") %>:</p>
                 <div class="cmsms_details_links">
                   <%= @short_film_user.language %>
                 </div>
               </li>
               <li>
-                <p class="cmsms_details_title">Director:</p>
+                <p class="cmsms_details_title"><%= t("activerecord.attributes.short_film_user.credits_direction") %>:</p>
                 <div class="cmsms_details_links">
                   <%= @short_film_user.credits_direction %>
                 </div>
               </li>
 
               <li>
-                <p class="cmsms_details_title">Producer:</p>
+                <p class="cmsms_details_title"><%= t("activerecord.attributes.short_film_user.producer_name") %>:</p>
                 <div class="cmsms_details_links">
                   <%= @short_film_user.producer_name %>
                 </div>
@@ -130,12 +130,12 @@
       <aside class="project_navi">
         <span class="fl">
           <% if @short_film_user.previous %>
-            <%= link_to "Corto anterior", [:front, @short_film_user.previous] %>
+            <%= link_to t("views.short_films.show.button_short_film_preview"), [:front, @short_film_user.previous] %>
           <% end %>
         </span>
         <span class="fr">
           <% if @short_film_user.next %>
-            <%= link_to "Corto siguiente", [:front, @short_film_user.next] %>
+            <%= link_to t("views.short_films.show.button_short_film_next"), [:front, @short_film_user.next] %>
           <% end %>
         </span>
       </aside>
