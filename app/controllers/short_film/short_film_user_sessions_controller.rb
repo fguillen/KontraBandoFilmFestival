@@ -8,9 +8,9 @@ class ShortFilm::ShortFilmUserSessionsController < ShortFilm::ShortFilmControlle
 
     if @short_film_user_session.save
       flash[:notice] = t("controllers.sessions.create.success")
-      redirect_back_or_default [:front, current_short_film_user]
+      redirect_back_or_default [:short_film, current_short_film_user]
     else
-      flash[:alert] = t("controllers.sessions.create.success")
+      flash[:alert] = t("controllers.sessions.create.error")
       render action: "new"
     end
   end
@@ -19,7 +19,7 @@ class ShortFilm::ShortFilmUserSessionsController < ShortFilm::ShortFilmControlle
     @short_film_user_session = ShortFilmUserSession.find
     @short_film_user_session.destroy if @short_film_user_session
 
-    redirect_to short_film_login_path, :notice => "ShortFilm User logged out!"
+    redirect_to short_film_login_path, :notice => t("controllers.sessions.destroy.success")
   end
 
   def forgot_password
@@ -31,9 +31,9 @@ class ShortFilm::ShortFilmUserSessionsController < ShortFilm::ShortFilmControlle
 
     if short_film_user
       short_film_user.send_reset_password_email
-      redirect_to short_film_forgot_password_path, :notice => "Instructions to reset your password have been sent to your email"
+      redirect_to short_film_forgot_password_path, :notice => t("controllers.sessions.forgot_password.success")
     else
-      redirect_to short_film_forgot_password_path, :alert => "We can't find the email '#{params[:short_film_user_session][:email]}'"
+      redirect_to short_film_forgot_password_path, :alert => t("controllers.sessions.forgot_password.no_email")
     end
   end
 end

@@ -4,6 +4,48 @@ class ShortFilm::ShortFilmUsersControllerTest < ActionController::TestCase
   def setup
   end
 
+  def test_show
+    setup_short_film_user
+
+    get :show, :id => @short_film_user
+
+    assert_template "short_film/short_film_users/show"
+    assert_not_nil(assigns(:short_film_user))
+  end
+
+  def test_show_not_allow_show_from_other_user
+    setup_short_film_user
+    other_short_film_user = FactoryGirl.create(:short_film_user)
+
+    assert_raise(ActionController::RoutingError) do
+      get :show, :id => other_short_film_user
+    end
+  end
+
+  def test_on_show_show_alerts
+    setup_short_film_user
+
+
+    @short_film_user.update_attributes!(:moderation_accepted => false, :paid_at => nil, :received_at => nil)
+    flash[:alert] = nil
+    get :show, :id => @short_film_user
+    assert_match(I18n.t("controllers.short_films.show.alert_not_paid"), flash[:alert])
+    assert_match(I18n.t("controllers.short_films.show.alert_not_received"), flash[:alert])
+    assert_match(I18n.t("controllers.short_films.show.alert_not_moderation_accepted"), flash[:alert])
+
+    @short_film_user.update_attributes!(:moderation_accepted => false, :paid_at => Time.now, :received_at => Time.now)
+    flash[:alert] = nil
+    get :show, :id => @short_film_user
+    assert_no_match(I18n.t("controllers.short_films.show.alert_not_paid"), flash[:alert])
+    assert_no_match(I18n.t("controllers.short_films.show.alert_not_received"), flash[:alert])
+    assert_match(I18n.t("controllers.short_films.show.alert_not_moderation_accepted"), flash[:alert])
+
+    @short_film_user.update_attributes!(:moderation_accepted => true, :paid_at => Time.now, :received_at => Time.now)
+    flash[:alert] = nil
+    get :show, :id => @short_film_user
+    assert_nil(flash[:alert])
+  end
+
   def test_new
     get :new
     assert_template "short_film/short_film_users/new"
@@ -30,7 +72,7 @@ class ShortFilm::ShortFilmUsersControllerTest < ActionController::TestCase
     assert_not_nil(flash[:notice])
 
     short_film_user = ShortFilmUser.last
-    assert_redirected_to [:front, short_film_user]
+    assert_redirected_to short_film_login_path
 
     assert_equal("The Title", short_film_user.title)
     assert_match("front.jpg", short_film_user.thumbnail.url(:front))
@@ -69,7 +111,7 @@ class ShortFilm::ShortFilmUsersControllerTest < ActionController::TestCase
 
     @short_film_user.reload
 
-    assert_redirected_to [:front, @short_film_user]
+    assert_redirected_to [:short_film, @short_film_user]
     assert_not_nil(flash[:notice])
 
     assert_equal("Other Title", @short_film_user.title)

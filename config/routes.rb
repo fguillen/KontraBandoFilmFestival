@@ -15,7 +15,7 @@ KontraBandoFilmFestival::Application.routes.draw do
     put "reset_password/:reset_password_code", :to => "short_film_users#reset_password_submit", :as => :reset_password_submit
 
     resources :short_film_user_sessions, :only => [:new, :create, :destroy]
-    resources :short_film_users, :only => [:new, :create, :edit, :update]
+    resources :short_film_users, :only => [:show, :new, :create, :edit, :update]
   end
 
   namespace :admin do

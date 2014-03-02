@@ -135,6 +135,7 @@ es:
         synopsis: "Sinopsis"
         button_short_film_preview: "Corto anterior"
         button_short_film_next: "Corto siguiente"
+        button_edit: "Modifica los datos de tu Corto"
 
       new:
         title: "Enviar tu Corto"
@@ -145,6 +146,12 @@ es:
         title_script_embed: "Video online"
         title_producer: "Productor"
         title_credits: "Créditos"
+
+    sessions:
+      new:
+        title: "Login"
+        button_send: "Enviar credenciales"
+        button_forgot_password: "¿Olvidaste tu contraseña?"
 
 
 
@@ -157,9 +164,23 @@ es:
         success: "Usuario autenticado con éxito"
         error: "Algún error al intentar autenticar Usuario"
 
+      destroy:
+        success: "Has cerrado la sessión correctamente"
+
+      forgot_password:
+        success: "Hemos enviado a tu email instrucciones para actualizar tu contraseña"
+        no_email: "No hemos podido localizar el email que nos has indicado"
+
+
+
     short_films:
+      show:
+        alert_not_paid: "La cuota de suscripción todavía no ha sido recibida"
+        alert_not_received: "La versión del Corto para proyectar aún no ha sido recibida"
+        alert_not_moderation_accepted: "El corto se encuentra en período de moderación"
+
       create:
-        success: "Corto enviado con éxito. Recuerda que el Corto tiene ser revisado por nuestras Administradoras antes de hacerlo público."
+        success: "Corto enviado con éxito. Puedes utilizar los datos que nos has indicado para entrar en tu cuenta"
         error: "Algún error encontrado al intentar enviar Corto"
 
       update:

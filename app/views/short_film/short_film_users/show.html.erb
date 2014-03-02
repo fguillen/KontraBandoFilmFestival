@@ -1,0 +1,11 @@
+<% title @short_film_user.title %>
+
+<section id="middle_content">
+  <div class="entry">
+    <section class="opened-article">
+      <%= render :partial => "front/short_film_users/short_film_user", :locals => { :short_film_user => @short_film_user } %>
+    </section>
+
+    <%= link_to t("views.short_films.show.button_edit"), [:edit, :short_film, @short_film_user], :class => "button_medium" %>
+  </div>
+</section>

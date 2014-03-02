@@ -17,7 +17,7 @@ class ShortFilm::ShortFilmUserSessionsControllerTest < ActionController::TestCas
       }
     )
 
-    assert_redirected_to [:front, short_film_user]
+    assert_redirected_to [:short_film, short_film_user]
     assert_not_nil( flash[:notice] )
   end
 

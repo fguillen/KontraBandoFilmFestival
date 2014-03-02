@@ -16,6 +16,14 @@ class ShortFilm::ShortFilmController < ApplicationController
     end
   end
 
+  def require_short_film_user_to_be_the_one_logged
+    Rails.logger.info "XXX: current_short_film_user: #{current_short_film_user.id}"
+    Rails.logger.info "XXX: @short_film_user: #{@short_film_user.id}"
+    unless current_short_film_user == @short_film_user
+      not_allowed
+    end
+  end
+
   def current_short_film_user_session
     return @current_short_film_user_session if defined?(@current_short_film_user_session)
     @current_short_film_user_session = ShortFilmUserSession.find
