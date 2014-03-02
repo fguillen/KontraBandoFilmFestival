@@ -2,6 +2,10 @@
   <div class="panel-heading">Admin</div>
   <div class="panel-body">
     <dl class="dl-horizontal">
+      <dt><%= t("activerecord.attributes.short_film_user.paid_at") %></dt>
+        <dd><%= short_film_user.paid_at ? short_film_user.paid_at.to_s(:datedb) : "No paid yet" %></dd>
+      <dt><%= t("activerecord.attributes.short_film_user.received_at") %></dt>
+        <dd><%= short_film_user.received_at ? short_film_user.received_at.to_s(:datedb) : "No received yet" %></dd>
       <dt><%= t("activerecord.attributes.short_film_user.moderation_accepted") %></dt>
         <dd><%= render_label (short_film_user.moderation_accepted? ? "Accepted" : "Pending"), :status %></dd>
     </dl>

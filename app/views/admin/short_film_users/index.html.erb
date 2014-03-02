@@ -8,6 +8,8 @@
       <tr>
         <th>Id</th>
         <th>Title</th>
+        <th>Paid</th>
+        <th>Received</th>
         <th>Moderation</th>
         <th>Created At</th>
       </tr>
@@ -18,6 +20,8 @@
         <tr>
           <td><%= link_to short_film_user.id, [:admin, short_film_user] %></td>
           <td><%= link_to short_film_user.title, [:admin, short_film_user] %></td>
+          <td><%= render_label (short_film_user.paid_at? ? "Accepted" : "Pending"), :status %></td>
+          <td><%= render_label (short_film_user.received_at? ? "Accepted" : "Pending"), :status %></td>
           <td><%= render_label (short_film_user.moderation_accepted? ? "Accepted" : "Pending"), :status %></td>
           <td><%= short_film_user.created_at.to_s(:datetimedb) %></td>
         </tr>
