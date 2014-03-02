@@ -23,6 +23,11 @@
     { "style": "background-color: #E68585; color: #000;", "regex": "^(no|0|false)$" }
   ],
 
+  "status": [
+    { "style": "background-color: #91E391; color: #000;", "regex": "(Active|Accepted)" },
+    { "style": "background-color: #E68585; color: #000;", "regex": "(Paused|Pending)" }
+  ],
+
   "tags": [
     { "style": "background-color: #f5acb0; color: #000;" },
     { "style": "background-color: #f5abd5; color: #000;" },

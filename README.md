@@ -14,3 +14,4 @@
 - Traducción de los textos al español
 - Limitar géneros a los sugeridos
 - Añadir sugeridos lenguajes
+- Funcionalidad de moderación de cortos

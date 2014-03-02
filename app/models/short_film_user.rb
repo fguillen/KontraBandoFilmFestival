@@ -41,6 +41,8 @@ class ShortFilmUser < ActiveRecord::Base
 
   validates :thumbnail, :attachment_presence => true
 
+  scope :validated, -> { where(:moderation_accepted => true) }
+
   ATTACH_STYLES = {
     :front => "205x126#",
     :front_medium => "287x177#",

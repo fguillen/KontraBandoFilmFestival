@@ -28,4 +28,11 @@ class ShortFilmUserTest < ActiveSupport::TestCase
     assert_equal(short_film_user_2.id, short_film_user_1.next.id)
     assert_equal(nil, short_film_user_2.next)
   end
+
+  def test_scope_validated
+    short_film_user_1 = FactoryGirl.create(:short_film_user, :moderation_accepted => false)
+    short_film_user_2 = FactoryGirl.create(:short_film_user, :moderation_accepted => true)
+
+    assert_ids([short_film_user_2], ShortFilmUser.validated)
+  end
 end

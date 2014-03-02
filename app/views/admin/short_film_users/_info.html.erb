@@ -1,4 +1,14 @@
 <div class="panel panel-default">
+  <div class="panel-heading">Admin</div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt><%= t("activerecord.attributes.short_film_user.moderation_accepted") %></dt>
+        <dd><%= render_label (short_film_user.moderation_accepted? ? "Accepted" : "Pending"), :status %></dd>
+    </dl>
+  </div>
+</div>
+
+<div class="panel panel-default">
   <div class="panel-heading">Video</div>
   <div class="panel-body">
     <dl class="dl-horizontal">

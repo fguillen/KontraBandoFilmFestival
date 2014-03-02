@@ -2,6 +2,17 @@
   <%= render "/shared/form_errors", :object => f.object %>
 
   <fieldset>
+    <legend>Admin</legend>
+
+    <div class="form-group">
+      <%= f.label :moderation_accepted, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-3">
+        <%= f.select(:moderation_accepted, [["Pending", false],["Accepted", true]], {}, :class => "form-control") %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
     <legend>Video</legend>
 
     <div class="form-group">

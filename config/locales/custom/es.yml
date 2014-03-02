@@ -66,6 +66,7 @@ es:
         password_confirmation: "Confirmación de la Contraseña"
         thumbnail: "Imagen de promoción"
         created_at: "Recibido el"
+        moderation_accepted: "Validado y Aprobado"
 
 
 
@@ -158,11 +159,11 @@ es:
 
     short_films:
       create:
-        success: "Corto enviado con éxito"
+        success: "Corto enviado con éxito. Recuerda que el Corto tiene ser revisado por nuestras Administradoras antes de hacerlo público."
         error: "Algún error encontrado al intentar enviar Corto"
 
       update:
-        success: "Corto actualizado con éxito"
+        success: "Corto actualizado con éxito. El Corto tiene ser revisado por nuestras Administradoras antes de hacerlo público."
         error: "Algún error encontrado al intentar actualizar Corto"
 
       password_reset:

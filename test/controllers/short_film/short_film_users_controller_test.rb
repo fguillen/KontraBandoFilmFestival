@@ -75,4 +75,18 @@ class ShortFilm::ShortFilmUsersControllerTest < ActionController::TestCase
     assert_equal("Other Title", @short_film_user.title)
   end
 
+  def test_after_update_make_moderation_accepted_false
+    setup_short_film_user
+    @short_film_user.update_attributes!(:moderation_accepted => true)
+
+    put(
+      :update,
+      :id => @short_film_user,
+      :short_film_user => {}
+    )
+
+    @short_film_user.reload
+    assert_equal(false, @short_film_user.moderation_accepted)
+  end
+
 end

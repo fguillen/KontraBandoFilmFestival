@@ -8,6 +8,7 @@ class ShortFilm::ShortFilmUsersController < ShortFilm::ShortFilmController
 
   def create
     @short_film_user = ShortFilmUser.new(params[:short_film_user])
+    @short_film_user.log_book_historian = @short_film_user
     if @short_film_user.save
       redirect_to [:front, @short_film_user], :notice => t("controllers.short_films.create.success")
     else
@@ -20,7 +21,9 @@ class ShortFilm::ShortFilmUsersController < ShortFilm::ShortFilmController
   end
 
   def update
+    @short_film_user.log_book_historian = @short_film_user
     if @short_film_user.update_attributes(params[:short_film_user])
+      @short_film_user.update_attributes!(:moderation_accepted => false)
       redirect_to [:front, @short_film_user], :notice  => t("controllers.short_films.update.success")
     else
       flash.now[:alert] = t("controllers.short_films.update.error")
