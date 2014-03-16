@@ -11,17 +11,19 @@
           <div id="rev_slider_1_1" class="rev_slider fullwidthabanner" style="display:none;max-height:580px;height:580;">
             <ul>
               <li data-transition="fade" data-slotamount="7" data-masterspeed="500" >
-                <img src="/assets/vendor/riviera/images/img/slider_1.jpg"  alt="slider_1"  data-fullwidthcentering="on" />
+                <div class="caption fade fullscreenvideo tp-caption start" data-autoplay="false" data-x="0" data-y="0" data-speed="500" data-start="10" data-easing="easeOutBack">
+                  <iframe width="100%" height="100%" src="//www.youtube.com/embed/2NlvzowSRa4" frameborder="0" allowfullscreen style="width: 0px; height: 0px;"></iframe>
+                </div>
               </li>
               <li data-transition="fade" data-slotamount="7" data-masterspeed="1000" >
-                <img src="/assets/vendor/riviera/images/img/slider_2.jpg"  alt="slider_2"  data-fullwidthcentering="on" />
-              </li>
-              <li data-transition="fade" data-slotamount="7" data-masterspeed="1000" >
-                <img src="/assets/vendor/riviera/images/img/slider_3.jpg"  alt="slider_3"  data-fullwidthcentering="on" />
+                <div class="caption fade fullscreenvideo tp-caption start" data-autoplay="false" data-x="0" data-y="0" data-speed="500" data-start="10" data-easing="easeOutBack">
+                  <iframe width="100%" height="100%" src="//www.youtube.com/embed/uc4VOjcIn5Q" frameborder="0" allowfullscreen style="width: 0px; height: 0px;"></iframe>
+                </div>
               </li>
             </ul>
           </div>
         </div>
+
         <!-- END REVOLUTION SLIDER -->
 
       </div>
@@ -45,7 +47,7 @@
           <div class="post_type_shortcode_inner">
             <h2>Últimos cortos recibidos</h2>
             <ul class="post_type_list portfolio_container responsiveContentSlider">
-              <% ShortFilmUser.all.each_slice(4) do |short_film_users_slice| %>
+              <% ShortFilmUser.validated.each_slice(4) do |short_film_users_slice| %>
                 <li>
                   <% short_film_users_slice.each do |short_film_user| %>
                     <article class="project format-album hentry one_fourth">
