@@ -19,6 +19,13 @@ class ShortFilmUser < ActiveRecord::Base
     :other
   ]
 
+  TUTOR_KINDS = [
+    :mother,
+    :father,
+    :legal,
+    :none
+  ]
+
   strip_attributes
   log_book
 
@@ -34,10 +41,20 @@ class ShortFilmUser < ActiveRecord::Base
   validates :synopsis, :presence => true
   validates :producer_name, :presence => true
   validates :producer_dni, :presence => true
-  validates :producer_year_of_birth, :presence => true
+  validates :producer_date_of_birth, :presence => true
   validates :producer_phone, :presence => true
   validates :producer_email, :presence => true
   validates :producer_email, :uniqueness => true, :format => { :with => RubyRegex::Email }
+
+  validates :tutor_kind, :presence => true, :if => Proc.new { |e| e.underage? }
+  validates :tutor_name, :presence => true, :if => Proc.new { |e| e.underage? }
+  validates :tutor_dni, :presence => true, :if => Proc.new { |e| e.underage? }
+  validates :tutor_phone, :presence => true, :if => Proc.new { |e| e.underage? }
+  validates :tutor_email, :presence => true, :if => Proc.new { |e| e.underage? }
+
+  validates :accept_authenticity, :acceptance => { :accept => true }
+  validates :accept_authorization, :acceptance => { :accept => true }
+  validates :accept_responsability, :acceptance => { :accept => true }
 
   validates :thumbnail, :attachment_presence => true
 
@@ -88,6 +105,11 @@ class ShortFilmUser < ActiveRecord::Base
     short_film_users = ShortFilmUser.all
     index = short_film_users.find_index(self)
     index < (short_film_users.length - 1) ? short_film_users[index + 1] : nil
+  end
+
+  def underage?
+    return false if producer_date_of_birth.nil?
+    producer_date_of_birth > 18.years.ago
   end
 
 end

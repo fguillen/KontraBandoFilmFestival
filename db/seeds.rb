@@ -13,7 +13,7 @@ ActiveRecord::Base.transaction do
         :credits_direction => Faker::Lorem.word,
         :producer_name => Faker::Lorem.word,
         :producer_dni => "111222333",
-        :producer_year_of_birth => 1990,
+        :producer_fecha_of_birth => Date.parse("1990-01-02"),
         :producer_phone => "111222333",
         :producer_email => "producer_#{index}@email.com",
         :password => "pass",

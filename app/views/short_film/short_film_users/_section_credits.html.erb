@@ -1,0 +1,41 @@
+<h2><%= t("views.short_films.new.title_credits") %></h2>
+
+<div class="form_info cmsms_input">
+  <%= f.label :credits_direction do %><%= t("activerecord.attributes.short_film_user.credits_direction") %> <span class="color_3">*</span><% end %>
+  <%= f.text_field :credits_direction, :class => "validate[required]" %>
+</div>
+
+<div class="form_info cmsms_input">
+  <%= f.label :credits_script %>
+  <%= f.text_field :credits_script %>
+</div>
+
+<div class="form_info cmsms_input">
+  <%= f.label :credits_camera %>
+  <%= f.text_field :credits_camera %>
+</div>
+
+<div class="form_info cmsms_input">
+  <%= f.label :credits_art_direction %>
+  <%= f.text_field :credits_art_direction %>
+</div>
+
+<div class="form_info cmsms_input">
+  <%= f.label :credits_editing %>
+  <%= f.text_field :credits_editing %>
+</div>
+
+<div class="form_info cmsms_input">
+  <%= f.label :credits_music %>
+  <%= f.text_field :credits_music, :size => "6" %>
+</div>
+
+<div class="form_info cmsms_textarea">
+  <%= f.label :credits_actors %>
+  <%= f.text_area :credits_actors, :cols => "28", :rows => "4" %>
+</div>
+
+<div class="form_info cmsms_input">
+  <%= f.label :credits_other %>
+  <%= f.text_field :credits_other %>
+</div>

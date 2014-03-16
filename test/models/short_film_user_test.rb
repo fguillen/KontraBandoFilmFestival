@@ -35,4 +35,40 @@ class ShortFilmUserTest < ActiveSupport::TestCase
 
     assert_ids([short_film_user_2], ShortFilmUser.validated)
   end
+
+  def test_validate_tutor_fields_if_lower_age
+    short_film_user = FactoryGirl.create(:short_film_user, :producer_date_of_birth => "1990-01-01")
+    assert_equal(true, short_film_user.valid?)
+
+    short_film_user.producer_date_of_birth = "2000-01-01"
+    assert_equal(false, short_film_user.valid?)
+
+    assert_equal(true, short_film_user.errors.include?(:tutor_kind))
+    assert_equal(true, short_film_user.errors.include?(:tutor_name))
+    assert_equal(true, short_film_user.errors.include?(:tutor_phone))
+    assert_equal(true, short_film_user.errors.include?(:tutor_email))
+    assert_equal(true, short_film_user.errors.include?(:tutor_dni))
+
+    short_film_user.tutor_kind = "mother"
+    short_film_user.tutor_name = "tutor name"
+    short_film_user.tutor_phone = "tutor phone"
+    short_film_user.tutor_email = "email@email.com"
+    short_film_user.tutor_dni = "tutor dni"
+
+    assert_equal(true, short_film_user.valid?)
+  end
+
+  def test_underage
+    short_film_user = FactoryGirl.build(:short_film_user)
+
+    short_film_user.producer_date_of_birth = nil
+    assert_equal(false, short_film_user.underage?)
+
+    short_film_user.producer_date_of_birth = "1990-01-01"
+    assert_equal(false, short_film_user.underage?)
+
+    short_film_user.producer_date_of_birth = 16.years.ago
+    assert_equal(true, short_film_user.underage?)
+
+  end
 end

@@ -1,0 +1,33 @@
+<h2><%= t("views.short_films.new.title_tutor") %></h2>
+<p><%= t("views.short_films.new.tutor_help_text") %></p>
+
+<div class="form_info cmsms_radio">
+  <%= f.label :tutor_kind %>
+
+  <% ShortFilmUser::TUTOR_KINDS.each do |tutor_kind| %>
+    <div class="check_parent">
+      <%= f.radio_button(:tutor_kind, tutor_kind, :value => t("catalogs.tutor_kinds.#{tutor_kind}")) %>
+      <label for="short_film_user_tutor_kind_<%= tutor_kind %>"> <%= t("catalogs.tutor_kinds.#{tutor_kind}") %> </label>
+    </div>
+  <% end %>
+</div>
+
+<div class="form_info cmsms_input">
+  <%= f.label :tutor_name %>
+  <%= f.text_field :tutor_name %>
+</div>
+
+<div class="form_info cmsms_input">
+  <%= f.label :tutor_email %>
+  <%= f.text_field :tutor_email, :size => "22" %>
+</div>
+
+<div class="form_info cmsms_input">
+  <%= f.label :tutor_dni %>
+  <%= f.text_field :tutor_dni %>
+</div>
+
+<div class="form_info cmsms_input">
+  <%= f.label :tutor_phone %>
+  <%= f.text_field :tutor_phone %>
+</div>

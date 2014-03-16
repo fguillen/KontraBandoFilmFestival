@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140302200947) do
+ActiveRecord::Schema.define(version: 20140316190131) do
 
   create_table "admin_users", force: true do |t|
     t.string   "name",              null: false
@@ -61,11 +61,10 @@ ActiveRecord::Schema.define(version: 20140302200947) do
     t.string   "credits_editing"
     t.string   "credits_music"
     t.string   "credits_other"
-    t.string   "credits_actors"
+    t.text     "credits_actors"
     t.text     "synopsis",               null: false
     t.string   "producer_name",          null: false
     t.string   "producer_dni",           null: false
-    t.string   "producer_year_of_birth", null: false
     t.string   "producer_phone",         null: false
     t.string   "producer_email",         null: false
     t.string   "school_name"
@@ -82,6 +81,15 @@ ActiveRecord::Schema.define(version: 20140302200947) do
     t.boolean  "moderation_accepted"
     t.datetime "received_at"
     t.datetime "paid_at"
+    t.string   "tutor_kind"
+    t.string   "tutor_name"
+    t.string   "tutor_dni"
+    t.string   "tutor_phone"
+    t.string   "tutor_email"
+    t.date     "producer_date_of_birth", null: false
+    t.boolean  "accept_authenticity"
+    t.boolean  "accept_authorization"
+    t.boolean  "accept_responsability"
   end
 
   create_table "taggings", force: true do |t|

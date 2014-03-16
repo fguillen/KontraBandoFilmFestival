@@ -10,12 +10,19 @@ es:
       catalonian: "Catalán"
       no_sound: "Mudo"
       other: "Otro"
+      no_subs: "Sin subtítulos"
 
     genres:
       documentary: "Documental"
       fiction: "Ficción"
       anime: "Animación"
       other: "Otro"
+
+    tutor_kinds:
+      mother: "Madre"
+      father: "Padre"
+      legal: "Representante Legal"
+      none: "No me hace falta autorización porque soy mayor de edad"
 
 
   will_paginate:
@@ -58,15 +65,23 @@ es:
         synopsis: "Sinopsis"
         producer_name: "Nombre del Productor"
         producer_dni: "DNI del Productor"
-        producer_year_of_birth: "Año de nacimiento del Productor"
+        producer_date_of_birth: "Fecha de nacimiento del Productor"
         producer_phone: "Teléfono de contacto"
         producer_email: "Email de contacto"
-        school_name: "Nombre de la escuela"
+        tutor_kind: "Tutor"
+        tutor_name: "Nombre del Tutor"
+        tutor_dni: "DNI del Tutor"
+        tutor_phone: "Teléfono de contacto del Tutor"
+        tutor_email: "Email de contacto del Tutor"
+        school_name: "Nombre del centro escolar"
         password: "Contraseña"
         password_confirmation: "Confirmación de la Contraseña"
         thumbnail: "Imagen de promoción"
         created_at: "Recibido el"
         moderation_accepted: "Validado y Aprobado"
+        accept_authenticity: "Declaro que los datos incluidos en este formulario son ciertos"
+        accept_responsability: "Declaro que las imágenes de las personas que aparecen en el cortometraje han sido grabadas con su autorización o, en caso de menores, la de sus padres o representantes legales"
+        accept_authorization: "Eximo a Xarxa Cinema de cualquier responsabilidad en caso de que alguno de los datos no sea cierto o si los derechos de autoría del material audiovisual fueran reclamados por terceros"
 
 
 
@@ -126,6 +141,7 @@ es:
               1. En caso de que el corto incorpore imágenes o voces de menores, se deberá rellenar una hoja de autorización firmada por el tutor legal de cada menor.
 
     short_films:
+
       index:
         title: "Los cortos"
         sort_button_title: "Ordenar por Título"
@@ -139,13 +155,21 @@ es:
 
       new:
         title: "Enviar tu Corto"
-        required_fields: "Los campos requiridos están marcados con"
+        required_fields: "Los campos requeridos están marcados con"
         send_button: "Enviar Corto"
         title_info: "Detalles del corto"
+        title_placeholder: "Pon aquí el título de tu corto"
         title_thumbnail: "Imagen"
         title_script_embed: "Video online"
         title_producer: "Productor"
+        title_tutor: "Representante Legal"
         title_credits: "Créditos"
+        title_school: "Centro Escolar"
+        title_accept: "Aceptación de términos y responsabilidad"
+        producer_help_text: "El productor es la persona responsable del envío del corto a nuestro festival, también será nuestra persona de contacto. El email y la contraseña será imprescindible para gestionar los datos de tu corto."
+        tutor_help_text: "Sólo en caso de ser menor de edad. Imprescindible autorización y datos de contacto para la aceptación del premio si resultara ganador."
+        school_help_text: "Si este corto es parte de una actividad escolar indica el nombre del centro"
+        synopsis_placeholder: "De qué va tu corto?"
 
     sessions:
       new:

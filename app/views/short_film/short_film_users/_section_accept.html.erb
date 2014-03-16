@@ -1,0 +1,26 @@
+<h2><%= t("views.short_films.new.title_accept") %></h2>
+
+<div class="form_info">
+  <div>
+    <label>
+      <%= f.check_box :accept_authenticity, :class => "validate[required]" %>
+      <%= t("activerecord.attributes.short_film_user.accept_authenticity") %>
+    </label>
+  </div>
+
+  <div>
+    <label>
+      <%= f.check_box :accept_responsability, :class => "validate[required]" %>
+      <%= t("activerecord.attributes.short_film_user.accept_responsability") %>
+    </label>
+  </div>
+
+  <div>
+    <label>
+      <%= f.check_box :accept_authorization, :class => "validate[required]" %>
+      <%= t("activerecord.attributes.short_film_user.accept_authorization") %>
+    </label>
+  </div>
+
+</div>
+

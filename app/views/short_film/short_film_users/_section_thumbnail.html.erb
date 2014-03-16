@@ -1,0 +1,11 @@
+<h2><%= t("views.short_films.new.title_thumbnail") %></h2>
+
+<% if @short_film_user.thumbnail.exists? %>
+  <%= image_tag @short_film_user.thumbnail(:admin) %>
+<% end %>
+
+<div class="form_info cmsms_input">
+  <%= f.label :thumbnail do %><%= t("activerecord.attributes.short_film_user.thumbnail") %> <span class="color_3">*</span><% end %>
+  <br />
+  <%= f.file_field :thumbnail, :class => "validate[required]" %>
+</div>

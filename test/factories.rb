@@ -20,9 +20,12 @@ FactoryGirl.define do
     synopsis "The Synopsis"
     producer_name "The Producer Name"
     producer_dni "The Producer DNI"
-    producer_year_of_birth 1900
+    producer_date_of_birth "1990-01-01"
     producer_phone "9191919191"
     sequence(:producer_email) { |n| "producer_#{n}@email.com" }
+    accept_authenticity true
+    accept_authorization true
+    accept_responsability true
 
     password "pass"
     password_confirmation "pass"

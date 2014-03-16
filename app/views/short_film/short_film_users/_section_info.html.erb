@@ -1,0 +1,40 @@
+<h2><%= t("views.short_films.new.title_info") %></h2>
+
+<div class="form_info cmsms_input">
+  <%= f.label :title do %><%= t("activerecord.attributes.short_film_user.title") %> <span class="color_3">*</span><% end %>
+  <%= f.text_field :title, :class => "validate[required]", :size => "22", :placeholder => t("views.short_films.new.title_placeholder") %>
+</div>
+
+<div class="form_info cmsms_input">
+  <%= f.label :length_minutes do %><%= t("activerecord.attributes.short_film_user.length") %> <span class="color_3">*</span><% end %>
+  <div style="clear:both">
+    <%= f.text_field :length_minutes, :class => "validate[required]", :placeholder => "MM", :style => "float: left; width: 60px" %>
+    <span style="float: left; margin: 0 10px"> : </span>
+    <%= f.text_field :length_seconds, :class => "validate[required]", :placeholder => "SS", :style => "float: left; width: 60px" %>
+  </div>
+  <div style="clear:both" />
+  <br />
+</div>
+
+<div class="form_info cmsms_select">
+  <%= f.label :language do %><%= t("activerecord.attributes.short_film_user.language") %> <span class="color_3">*</span><% end %>
+  <br />
+  <%= f.select(:language, ShortFilmUser::LANGUAGES.map { |e| [t("catalogs.languages.#{e}"), e] }) %>
+</div>
+
+<div class="form_info cmsms_select">
+  <%= f.label :subtitles_language do %><%= t("activerecord.attributes.short_film_user.subtitles_language") %> <span class="color_3">*</span><% end %>
+  <br />
+  <%= f.select(:subtitles_language, ShortFilmUser::LANGUAGES.map { |e| [t("catalogs.languages.#{e}"), e] }, { :include_blank => t("catalogs.languages.no_subs") }) %>
+</div>
+
+<div class="form_info cmsms_select">
+  <%= f.label :genre do %><%= t("activerecord.attributes.short_film_user.genre") %> <span class="color_3">*</span><% end %>
+  <br />
+  <%= f.select(:genre, ShortFilmUser::GENRES.map { |e| [t("catalogs.genres.#{e}"), e] }, {}, :class => "form-control") %>
+</div>
+
+<div class="form_info cmsms_textarea">
+  <%= f.label :synopsis do %><%= t("activerecord.attributes.short_film_user.synopsis") %> <span class="color_3">*</span><% end %>
+  <%= f.text_area :synopsis, :class => "validate[required,minSize[10]]", :cols => "28", :rows => "6", :placeholder => t("views.short_films.new.synopsis_placeholder") %>
+</div>

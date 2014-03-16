@@ -6,138 +6,17 @@
       <%= form_for [:short_film, @short_film_user], :html => { :class => "form-horizontal", :id => "short_film_user_form" } do |f| %>
         <%= render "/shared/form_errors", :object => f.object %>
 
-
         <p><%= t("views.short_films.new.required_fields") %> <span class="color_3">*</span></p>
 
-        <h2><%= t("views.short_films.new.title_info") %></h2>
+        <%= render :partial => "short_film/short_film_users/section_info", :locals => { :f => f } %>
+        <%= render :partial => "short_film/short_film_users/section_script_embed", :locals => { :f => f } %>
+        <%= render :partial => "short_film/short_film_users/section_thumbnail", :locals => { :f => f } %>
+        <%= render :partial => "short_film/short_film_users/section_credits", :locals => { :f => f } %>
+        <%= render :partial => "short_film/short_film_users/section_producer", :locals => { :f => f } %>
+        <%= render :partial => "short_film/short_film_users/section_tutor", :locals => { :f => f } %>
+        <%= render :partial => "short_film/short_film_users/section_school", :locals => { :f => f } %>
+        <%= render :partial => "short_film/short_film_users/section_accept", :locals => { :f => f } %>
 
-        <div class="form_info cmsms_input">
-          <%= f.label :title do %><%= t("activerecord.attributes.short_film_user.title") %> <span class="color_3">*</span><% end %>
-          <%= f.text_field :title, :class => "validate[required]", :size => "22", :placeholder => "This is the title of the ShortFilm" %>
-        </div>
-
-        <div class="form_info cmsms_input">
-          <%= f.label :length_minutes do %><%= t("activerecord.attributes.short_film_user.length") %> <span class="color_3">*</span><% end %>
-          <div style="clear:both">
-            <%= f.text_field :length_minutes, :class => "validate[required]", :placeholder => "MM", :style => "float: left; width: 60px" %>
-            <span style="float: left; margin: 0 10px"> : </span>
-            <%= f.text_field :length_seconds, :class => "validate[required]", :placeholder => "SS", :style => "float: left; width: 60px" %>
-          </div>
-          <div style="clear:both" />
-          <br />
-        </div>
-
-        <div class="form_info cmsms_select">
-          <%= f.label :language do %><%= t("activerecord.attributes.short_film_user.language") %> <span class="color_3">*</span><% end %>
-          <br />
-          <%= f.select(:language, ShortFilmUser::LANGUAGES.map { |e| [t("catalogs.languages.#{e}"), e] }) %>
-        </div>
-
-        <div class="form_info cmsms_select">
-          <%= f.label :subtitles_language do %><%= t("activerecord.attributes.short_film_user.subtitles_language") %> <span class="color_3">*</span><% end %>
-          <br />
-          <%= f.select(:subtitles_language, ShortFilmUser::LANGUAGES.map { |e| [t("catalogs.languages.#{e}"), e] }, { include_blank: "" }) %>
-        </div>
-
-        <div class="form_info cmsms_select">
-          <%= f.label :genre do %><%= t("activerecord.attributes.short_film_user.genre") %> <span class="color_3">*</span><% end %>
-          <br />
-          <%= f.select(:genre, ShortFilmUser::GENRES.map { |e| [t("catalogs.genres.#{e}"), e] }, {}, :class => "form-control") %>
-        </div>
-
-        <div class="form_info cmsms_textarea">
-          <%= f.label :synopsis do %><%= t("activerecord.attributes.short_film_user.synopsis") %> <span class="color_3">*</span><% end %>
-          <%= f.text_area :synopsis, :class => "validate[required,minSize[10]]", :cols => "28", :rows => "6", :placeholder => "Description of your ShortFilm" %>
-        </div>
-
-        <h2><%= t("views.short_films.new.title_thumbnail") %></h2>
-
-        <% if @short_film_user.thumbnail.exists? %>
-          <%= image_tag @short_film_user.thumbnail(:admin) %>
-        <% end %>
-
-        <div class="form_info cmsms_input">
-          <%= f.label :thumbnail do %><%= t("activerecord.attributes.short_film_user.thumbnail") %> <span class="color_3">*</span><% end %>
-          <br />
-          <%= f.file_field :thumbnail, :class => "validate[required]" %>
-        </div>
-
-        <h2><%= t("views.short_films.new.title_script_embed") %></h2>
-
-        <div class="form_info cmsms_textarea">
-          <%= f.label :script_embed %>
-          <%= f.text_area :script_embed, :cols => "28", :rows => "6", :placeholder => "Script from youtube, vimeo, blip.tv, ... Si no entiendes este campo o no tienes el corto subido a ninguna plataforma de vídeos no te preocupes nosotras lo añadiremos." %>
-        </div>
-
-        <h2><%= t("views.short_films.new.title_producer") %></h2>
-
-        <div class="form_info cmsms_input">
-        <%= f.label :producer_name do %><%= t("activerecord.attributes.short_film_user.producer_name") %> <span class="color_3">*</span><% end %>
-          <%= f.text_field :producer_name, :class => "validate[required]" %>
-        </div>
-
-        <div class="form_info cmsms_input">
-          <%= f.label :producer_email do %><%= t("activerecord.attributes.short_film_user.producer_email") %> <span class="color_3">*</span><% end %>
-          <%= f.text_field :producer_email, :class => "validate[required,custom[email]]", :size => "22" %>
-        </div>
-
-        <div class="form_info cmsms_input">
-          <%= f.label :password do %><%= t("activerecord.attributes.short_film_user.password") %> <span class="color_3">*</span><% end %>
-          <%= f.password_field :password, :class => "validate[required]" %>
-        </div>
-
-        <div class="form_info cmsms_input">
-        <%= f.label :password_confirmation do %><%= t("activerecord.attributes.short_film_user.password_confirmation") %> <span class="color_3">*</span><% end %>
-          <%= f.password_field :password_confirmation, :class => "validate[required]" %>
-        </div>
-
-        <div class="form_info cmsms_input">
-          <%= f.label :producer_dni do %><%= t("activerecord.attributes.short_film_user.producer_dni") %> <span class="color_3">*</span><% end %>
-          <%= f.text_field :producer_dni, :class => "validate[required]" %>
-        </div>
-
-        <div class="form_info cmsms_select">
-          <%= f.label :producer_year_of_birth do %><%= t("activerecord.attributes.short_film_user.producer_year_of_birth") %> <span class="color_3">*</span><% end %>
-          <br />
-          <%= f.select(:producer_year_of_birth, (1975..2013).to_a.reverse) %>
-        </div>
-
-        <div class="form_info cmsms_input">
-          <%= f.label :producer_phone do %><%= t("activerecord.attributes.short_film_user.producer_phone") %> <span class="color_3">*</span><% end %>
-          <%= f.text_field :producer_phone, :class => "validate[required]" %>
-        </div>
-
-        <h2><%= t("views.short_films.new.title_credits") %></h2>
-
-        <div class="form_info cmsms_input">
-          <%= f.label :credits_direction do %><%= t("activerecord.attributes.short_film_user.credits_direction") %> <span class="color_3">*</span><% end %>
-          <%= f.text_field :credits_direction, :class => "validate[required]" %>
-        </div>
-
-        <div class="form_info cmsms_input">
-          <%= f.label :credits_camera %>
-          <%= f.text_field :credits_camera %>
-        </div>
-
-        <div class="form_info cmsms_input">
-          <%= f.label :credits_art_direction %>
-          <%= f.text_field :credits_art_direction %>
-        </div>
-
-        <div class="form_info cmsms_input">
-          <%= f.label :credits_editing %>
-          <%= f.text_field :credits_editing %>
-        </div>
-
-        <div class="form_info cmsms_input">
-          <%= f.label :credits_music %>
-          <%= f.text_field :credits_music, :size => "6" %>
-        </div>
-
-        <div class="form_info cmsms_input">
-          <%= f.label :credits_other %>
-          <%= f.text_field :credits_other %>
-        </div>
 
         <div class="cl"></div>
         <div>

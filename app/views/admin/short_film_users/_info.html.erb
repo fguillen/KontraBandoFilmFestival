@@ -71,7 +71,7 @@
     <dl class="dl-horizontal">
       <dt>Name</dt><dd><%= short_film_user.producer_name %></dd>
       <dt>DNI</dt><dd><%= short_film_user.producer_dni %></dd>
-      <dt>Year of Birth</dt><dd><%= short_film_user.producer_year_of_birth %></dd>
+      <dt>Date of Birth</dt><dd><%= short_film_user.producer_date_of_birth.to_s(:datehuman) %></dd>
       <dt>Phone</dt><dd><%= short_film_user.producer_phone %></dd>
       <dt>Email</dt><dd><%= short_film_user.producer_email %></dd>
     </dl>

@@ -2,6 +2,8 @@
 
 ## TODO
 
+- Pago online
+- Poder elegir idioma
 - Security in ShortFilmUsers (one user shouldn't access to other user's data)
 - SweetyBacky config
 - When admin update doesn't render anything "data?"
@@ -10,6 +12,14 @@
 - Password is not needed in edit
 - Opción para el usuario para acceder a la actualización de su corto
 - Opción para el usuario para cerrar sessión
+- Quitar likes in ShortUserFilm show logged (avisar de cual es la dirección pública)
+- Enviar mail al crear corto con instrucciones
+- Login no aperece el título
+
+- Al crear corto como user:
+  ArgumentError (invalid byte sequence in UTF-8):
+  app/controllers/short_film/short_film_users_controller.rb:22:in `create'
+
 
 ## Versión 2014-03-02
 
