@@ -29,14 +29,8 @@
       </div>
       <div class="one_third">
         <div class="responsive_content_block">
-          <h1 class="with_line">KBFF</h1>
-          <p>
-            Ésta es la primera edición del Festival de Cortos para Jóvenes en CineCiutat
-            <i>KontraBando film festival</i>. Lorem ipsum dolor sit amet, consetetur sadipscing
-            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-             clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          </p>
+          <h1 class="with_line"><%= t("views.pages.home.sections.top.title") %></h1>
+          <%= t("views.pages.home.sections.top.text") %>
         </div>
       </div>
       <div class="cl"></div>
@@ -86,18 +80,13 @@
       <div class="cl"></div>
       <br />
       <div class="one_first first_column">
-        <h2>Tu festival</h2>
+        <h2><%= t("views.pages.home.sections.your_festival.title") %></h2>
         <br />
         <div class="cl"></div>
         <img width="300" height="191" src="/assets/vendor/riviera/images/img/home-1.jpg" class="with_border alignleft max_width" />
         <div class="ovh">
-          <h4>Anímate a participar</h4>
-          <p>Por que te lo vas a pasar en grande y tal y cual.
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-          sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-          no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
-          <%= link_to "Envía tu corto", [:new, :short_film, :short_film_user], :class => "button_medium" %>
+          <h2><%= t("views.pages.home.sections.your_festival.text").to_md %>
+          <%= link_to t("views.pages.home.sections.your_festival.send_film_button"), [:new, :short_film, :short_film_user], :class => "button_medium" %>
         </div>
       </div>
 
