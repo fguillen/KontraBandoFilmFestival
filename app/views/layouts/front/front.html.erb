@@ -25,10 +25,10 @@
 
         <header id="header">
           <div class="header_inner">
-            <a class="logo" href="index.html">
-              <h1>KontraBando film festival</h1>
-              <h3>I Festival de Cortos para Jóvenes en CineCiutat</h3>
-            </a>
+            <%= link_to front_page_path("home"), :class => "logo" do %>
+              <%= image_tag "/assets/app/shared/logo_kbff.png" %>
+            <% end %>
+
             <ul class="social_icons">
               <li>
                 <a target="_blank" href="#" title="#">
