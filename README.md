@@ -16,6 +16,7 @@
 - Quitar likes in ShortUserFilm show logged (avisar de cual es la dirección pública)
 - Enviar mail al crear corto con instrucciones
 - Login no aperece el título
+- Whois dominio no aparecen los datos
 
 - Al crear corto como user:
   ArgumentError (invalid byte sequence in UTF-8):
