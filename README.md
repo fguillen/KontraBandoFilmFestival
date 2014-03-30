@@ -2,7 +2,7 @@
 
 ## TODO
 
-- Slider vídeo se ve mal
++ Slider vídeo se ve mal
 - Pago online
 - Poder elegir idioma
 - Security in ShortFilmUsers (one user shouldn't access to other user's data)

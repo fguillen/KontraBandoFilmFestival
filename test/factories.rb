@@ -32,4 +32,10 @@ FactoryGirl.define do
 
     thumbnail { File.new("#{Rails.root}/test/fixtures/pic.jpg") }
   end
+
+  factory :online_purchase do
+    short_film_user
+    description "Description"
+    amount 10.11
+  end
 end

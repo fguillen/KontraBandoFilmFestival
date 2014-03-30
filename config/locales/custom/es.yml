@@ -171,6 +171,9 @@ es:
               1. En el caso de incumplimiento total o parcial de las bases, no se devolverá el importe de la inscripción.
               1. En caso de resultar premiado se deberá presentar la documentación que acredite la identidad del autor.
 
+    short_film_user_sessions:
+      new:
+        title: "Login"
 
     short_films:
 
@@ -247,4 +250,10 @@ es:
         success: "Password actualizada con éxito. Ya estás autenticado"
         success: "Algún error encontrado al intentar actualizar password"
 
+    online_purchases:
+      create:
+        description: "Pago cuota de suscripción en Kontrabando Film Festival"
+
+      confirmed: "El pago de la cuota se ha recibido correctamente"
+      canceled: "El pago se ha cancelado"
 

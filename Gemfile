@@ -19,6 +19,8 @@ gem "lograge" # log cleaning
 gem "acts-as-taggable-on"
 gem "log_book", "~> 0.1"
 gem "style_palette", :git => "git://github.com/fguillen/StylePalette.git"
+gem "paypal-sdk-merchant"
+
 
 group :development do
   gem "nifty-generators"
@@ -42,4 +44,6 @@ group :test do
   gem "minitest-rails-capybara"
   gem "minitest-colorize"
   gem "minitest-focus"
+
+  gem "fakeweb"
 end

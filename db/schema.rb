@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140316190131) do
+ActiveRecord::Schema.define(version: 20140316190132) do
 
   create_table "admin_users", force: true do |t|
     t.string   "name",              null: false
@@ -32,6 +32,19 @@ ActiveRecord::Schema.define(version: 20140316190131) do
     t.integer  "historizable_id"
     t.string   "historizable_type"
     t.text     "text",              null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "online_purchases", force: true do |t|
+    t.integer  "short_film_user_id",                         null: false
+    t.decimal  "amount",             precision: 8, scale: 2, null: false
+    t.datetime "paid_at"
+    t.datetime "canceled_at"
+    t.string   "error"
+    t.string   "token"
+    t.string   "payer_id"
+    t.string   "description",                                null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -16,6 +16,10 @@ KontraBandoFilmFestival::Application.routes.draw do
 
     resources :short_film_user_sessions, :only => [:new, :create, :destroy]
     resources :short_film_users, :only => [:show, :new, :create, :edit, :update]
+    resources :online_purchases, :only => [:create] do
+      get :confirm, :on => :member
+      get :cancel, :on => :member
+    end
   end
 
   namespace :admin do
