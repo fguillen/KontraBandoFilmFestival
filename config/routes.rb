@@ -35,6 +35,11 @@ KontraBandoFilmFestival::Application.routes.draw do
 
     resources :log_book_events, :only => [:index]
     resources :admin_users
+
+    resources :online_purchases, :only => [:index, :show] do
+      get :log_book_events, :on => :member
+    end
+
     resources :short_film_users do
       get :log_book_events, :on => :member
     end

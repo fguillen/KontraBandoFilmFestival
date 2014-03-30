@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Details</div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt><%= t("activerecord.attributes.online_purchase.short_film_user_id") %></dt>
+        <dd><%= link_to online_purchase.short_film_user.title, [:admin, online_purchase.short_film_user] %></dd>
+
+      <dt><%= t("activerecord.attributes.online_purchase.amount") %></dt>
+        <dd><%= number_to_currency(online_purchase.amount) %></dd>
+
+      <dt><%= t("activerecord.attributes.online_purchase.created_at") %></dt>
+        <dd><%= online_purchase.created_at.to_s(:datetimedb) %></dd>
+
+      <dt><%= t("activerecord.attributes.online_purchase.paid_at") %></dt>
+        <dd><%= online_purchase.paid_at ? online_purchase.paid_at.to_s(:datetimedb) : "No paid yet" %></dd>
+
+      <dt><%= t("activerecord.attributes.online_purchase.canceled_at") %></dt>
+        <dd><%= online_purchase.canceled_at ? online_purchase.canceled_at.to_s(:datetimedb) : "No canceled" %></dd>
+
+      <dt><%= t("activerecord.attributes.online_purchase.error") %></dt>
+        <dd><%= online_purchase.error ? online_purchase.error : "-" %></dd>
+
+      <dt><%= t("activerecord.attributes.online_purchase.token") %></dt>
+        <dd><%= online_purchase.token ? online_purchase.token : "-" %></dd>
+
+      <dt><%= t("activerecord.attributes.online_purchase.payer_id") %></dt>
+        <dd><%= online_purchase.payer_id ? online_purchase.payer_id : "-" %></dd>
+
+      <dt><%= t("activerecord.attributes.online_purchase.description") %></dt>
+        <dd><%= online_purchase.description ? online_purchase.description : "-" %></dd>
+
+    </dl>
+  </div>
+</div>

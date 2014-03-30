@@ -1,0 +1,285 @@
+<%= form_for [:admin, @short_film_user], :html => { :class => "form-horizontal" } do |f| %>
+  <%= render "/shared/form_errors", :object => f.object %>
+
+  <fieldset>
+    <legend>Admin</legend>
+
+    <div class="form-group">
+      <%= f.label :moderation_accepted, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-3">
+        <%= f.select(:moderation_accepted, [["Pending", false],["Accepted", true]], {}, :class => "form-control") %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :paid_at, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.date_select(:paid_at, { :include_blank => true }, :class => "form-control") %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :received_at, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.date_select(:received_at, { :include_blank => true }, :class => "form-control") %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Video</legend>
+
+    <div class="form-group">
+      <%= f.label :script_embed, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_area :script_embed, :class => "form-control" %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Thumbnail</legend>
+
+    <% if @short_film_user.thumbnail.exists? %>
+      <div class="form-group">
+        <div class="col-sm-10 col-sm-offset-2">
+          <%= image_tag @short_film_user.thumbnail(:admin) %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :thumbnail, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.file_field :thumbnail, :class => "form-control nice_file_field" %>
+      </div>
+    </div>
+  </fieldset>
+
+
+  <fieldset>
+    <legend>Info</legend>
+
+    <div class="form-group required">
+      <%= f.label :title, :class => "col-sm-2 control-label" %>
+
+      <div class="col-sm-10">
+        <div class="input-group">
+          <%= f.text_field :title, :class => "form-control", :required => true, :placeholder => "This is the title of the ShortFilm" %>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-asterisk" data-toggle="tooltip" data-placement="right" title="Required field"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group required">
+      <%= f.label :length_minutes, :class => "col-sm-2 control-label" %>
+
+      <div class="col-sm-3">
+        <div class="input-group">
+          <%= f.number_field :length_minutes, :class => "form-control", :required => true, :placeholder => "00", :min => "0", :max => "60" %>
+          <span class="input-group-addon">:</span>
+          <%= f.number_field :length_seconds, :class => "form-control", :required => true, :placeholder => "00", :min => "0", :max => "59" %>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-asterisk" data-toggle="tooltip" data-placement="right" title="Required field"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :language, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-3">
+        <%= f.select(:language, ShortFilmUser::LANGUAGES.map { |e| [e, e] }, {}, :class => "form-control") %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :subtitles_language, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-3">
+        <%= f.select(:subtitles_language, ShortFilmUser::LANGUAGES.map { |e| [e, e] }, { include_blank: "" }, :class => "form-control") %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :genre, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-3">
+        <%= f.select(:genre, ShortFilmUser::GENRES.map { |e| [e, e] }, {}, :class => "form-control") %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Synopsis</legend>
+
+    <div class="form-group required">
+      <%= f.label :synopsis, :class => "col-sm-2 control-label" %>
+
+      <div class="col-sm-10">
+        <div class="input-group">
+          <%= f.text_area :synopsis, :class => "form-control mdm-input", :required => true, :rows => "5", :placeholder => "Short introduction of the ShortFilm" %>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-asterisk" data-toggle="tooltip" data-placement="right" title="Required field"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </fieldset>
+
+  <fieldset>
+    <legend>Credits</legend>
+
+    <div class="form-group required">
+      <%= f.label :credits_direction, :class => "col-sm-2 control-label" %>
+
+      <div class="col-sm-10">
+        <div class="input-group">
+          <%= f.text_field :credits_direction, :class => "form-control", :required => true, :placeholder => "Directors's name" %>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-asterisk" data-toggle="tooltip" data-placement="right" title="Required field"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :credits_script, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :credits_script, :class => "form-control", :placeholder => "Script's name" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :credits_camera, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :credits_camera, :class => "form-control", :placeholder => "Camera's name" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :credits_art_direction, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :credits_art_direction, :class => "form-control", :placeholder => "Art Director's name" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :credits_editing, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :credits_editing, :class => "form-control", :placeholder => "Editor's name" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :credits_music, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :credits_music, :class => "form-control", :placeholder => "Musician's name" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :credits_other, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :credits_other, :class => "form-control", :placeholder => "Other credits names" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :credits_actors, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :credits_actors, :class => "form-control", :placeholder => "Actors's name" %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Producer</legend>
+
+    <div class="form-group required">
+      <%= f.label :producer_name, :class => "col-sm-2 control-label" %>
+
+      <div class="col-sm-10">
+        <div class="input-group">
+          <%= f.text_field :producer_name, :class => "form-control", :required => true, :placeholder => "Producer's name" %>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-asterisk" data-toggle="tooltip" data-placement="right" title="Required field"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group required">
+      <%= f.label :producer_dni, :class => "col-sm-2 control-label" %>
+
+      <div class="col-sm-10">
+        <div class="input-group">
+          <%= f.text_field :producer_dni, :class => "form-control", :required => true, :placeholder => "Producer's DNI" %>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-asterisk" data-toggle="tooltip" data-placement="right" title="Required field"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group required">
+      <%= f.label :producer_date_of_birth, :class => "col-sm-2 control-label" %>
+
+      <div class="col-sm-3">
+        <%= f.date_select(:producer_date_of_birth) %>
+      </div>
+    </div>
+
+    <div class="form-group required">
+      <%= f.label :producer_phone, :class => "col-sm-2 control-label" %>
+
+      <div class="col-sm-4">
+        <div class="input-group">
+          <%= f.text_field :producer_phone, :class => "form-control", :required => true, :placeholder => "Producer's phone" %>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-asterisk" data-toggle="tooltip" data-placement="right" title="Required field"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group required">
+      <%= f.label :producer_email, :class => "col-sm-2 control-label" %>
+
+      <div class="col-sm-10">
+        <div class="input-group">
+          <%= f.text_field :producer_email, :class => "form-control", :required => true, :placeholder => "Producer's email" %>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-asterisk" data-toggle="tooltip" data-placement="right" title="Required field"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Password</legend>
+
+    <div class="form-group">
+      <%= f.label :password, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :password, :class => "form-control", :placeholder => "Password" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password_confirmation, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :password_confirmation, :class => "form-control", :placeholder => "Password confirmation" %>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit :class => "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+

@@ -16,6 +16,7 @@ module Admin::AdminHelper
     menus = {
       :admin_users => ["/admin/admin_users.*"],
       :short_film_users => ["/admin/short_film_users.*", "/admin"],
+      :admin_users => ["/admin/online_purchases.*"],
       :log_book_events => ["/admin/log_book_events"],
       :short_film_user_log_book_events => ["/admin/short_film_users/.+/log_book_events"],
       :short_film_user_info => ["/admin/short_film_users/[^/]+"]

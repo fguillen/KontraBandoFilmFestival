@@ -1,0 +1,25 @@
+<% title "OnlinePurchases" %>
+
+<div id="online_purchases">
+  <table class="table table-striped table-hover sortable">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>ShortFilm</th>
+        <th>Created at</th>
+        <th>Paid</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @online_purchases.each do |online_purchase| %>
+        <tr>
+          <td><%= link_to online_purchase.id, [:admin, online_purchase] %></td>
+          <td><%= link_to online_purchase.short_film_user.title, [:admin, online_purchase.short_film_user] %></td>
+          <td><%= online_purchase.created_at.to_s(:datetimedb) %></td>
+          <td><%= render_label (online_purchase.paid_at? ? "Accepted" : "Pending"), :status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

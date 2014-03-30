@@ -1,4 +1,7 @@
 class OnlinePurchase < ActiveRecord::Base
+  strip_attributes
+  log_book
+
   attr_protected nil
   belongs_to :short_film_user
 

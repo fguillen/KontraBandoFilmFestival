@@ -1,0 +1,4 @@
+<% title "OnlinePurchase > #{@online_purchase.id} > LogBook Events" %>
+
+<%= render :partial => "admin/online_purchases/menu", :locals => { :online_purchase => @online_purchase } %>
+<%= render :partial => "admin/log_book_events/list", :locals => { :log_book_events => @log_book_events } %>

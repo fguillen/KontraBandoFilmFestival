@@ -3,6 +3,11 @@
 <section id="middle_content">
   <div class="entry">
     <section class="opened-article">
+      Puedes hacer el pago online
+      <%= link_to "aquí", short_film_online_purchases_path, :method => :post %>
+    </section>
+
+    <section class="opened-article">
       <%= render :partial => "front/short_film_users/short_film_user", :locals => { :short_film_user => @short_film_user } %>
     </section>
 
