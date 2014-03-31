@@ -1,0 +1,44 @@
+<% title t("views.pages.about.coming_soon") %>
+
+<%= javascript_include_tag "/assets/app/front/js/home.js" %>
+
+<section id="middle_content">
+  <div class="entry">
+    <div class="cmsms_cc">
+      <div class="two_third first_column">
+        <div class="resize">
+          <div class="cmsms_blog_media">
+            <div class="resizable_block">
+              <% video_url = APP_CONFIG[:home_videos][rand(3)] %>
+              <iframe width="100%" height="100%" src="<%= video_url %>" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="one_third">
+        <div class="responsive_content_block">
+          <h1 class="with_line"><%= t("views.pages.home.sections.top.title") %></h1>
+          <%= t("views.pages.home.sections.top.text").to_md %>
+        </div>
+      </div>
+      <div class="cl"></div>
+      <br />
+      <br />
+
+      <div class="cl"></div>
+      <br />
+      <div class="one_first first_column">
+        <h2><%= t("views.pages.home.sections.your_festival.title") %></h2>
+        <br />
+        <div class="cl"></div>
+        <img width="300" height="191" src="/assets/vendor/riviera/images/img/home-1.jpg" class="with_border alignleft max_width" />
+        <div class="ovh">
+          <%= t("views.pages.home.sections.your_festival.text").to_md %>
+        </div>
+      </div>
+
+      <div class="cl"></div>
+
+    </div>
+  </div>
+</section>

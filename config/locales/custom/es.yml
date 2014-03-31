@@ -105,10 +105,12 @@ es:
             text: |
 
               El KBFF es un festival de cortometrajes realizados por jóvenes entre 13 y 18 años.
-              KBFF surge de la iniciativa de un grupo de voluntarios de Xarxa Cinema que,
+
+              KBFF surge de la iniciativa de un grupo de voluntarios de [XarxaCinema](http://xarxacinema.org) que,
               convencidos de la importancia de generar cultura, pretende proporcionar un espacio
               para una relación más dinámica e interactiva de los jóvenes con el cine.
-              La 1ª edición del KBFF se celebrará en CineCiutat el 25 de octubre del 2014, con la
+
+              La 1ª edición del KBFF se celebrará en [CineCiutat](http://cineciutat.org) el 25 de octubre del 2014, con la
               proyección de los cortos seleccionados, por el jurado y las votaciones del público, de
               entre todos los cortometrajes recibidos en la web del Festival en los plazos indicados.
 
@@ -121,10 +123,14 @@ es:
               Éste es tu festival.
 
               Si tienes una cámara, una idea, amigos actores… ponte a rodar y anímate a participar.
-              Si te falta algo para poder llevar a cabo tu película, entra en nuestro Facebook
+              Si te falta algo para poder llevar a cabo tu película, entra en nuestro
+              [Facebook](https://www.facebook.com/Kontrabandofilmfestival)
               y búscalo de KontraBando
 
             send_film_button: "Envía tu corto"
+
+      coming_soon:
+        title: "Coming Soon"
 
       about:
         title: "El Festival"
