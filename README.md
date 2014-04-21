@@ -17,6 +17,8 @@
 - Enviar mail al crear corto con instrucciones
 - Login no aperece el título
 - Whois dominio no aparecen los datos
+- Abrir canal Vimeo
+- Enviar email al Usuario cuando corto validado
 
 - Al crear corto como user:
   ArgumentError (invalid byte sequence in UTF-8):

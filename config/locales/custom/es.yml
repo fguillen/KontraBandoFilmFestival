@@ -132,6 +132,41 @@ es:
       coming_soon:
         title: "Coming Soon"
 
+      send_short_film:
+        title: "Enviar el corto en alta resolución"
+        why_title: "Por qué necesitamos el corto en alta resolución"
+        why_text: |
+          Tu corto será proyectado en una sala de cine y necesitamos una calidad mínima para que el corto
+          se vea perfectamente.
+
+        instructions_title: "Cómo hacernos llegar el corto en alta resolución"
+        instructions_text: |
+          Puedes hacernos llegar tu corto en alta de cualquiera de estas maneras:
+
+          #### En mano
+
+          Pásate por la [taquilla del CineCiutat](http://cineciutat.org) y entréganos un CD o un pendrive con el fichero. Te devolveremos el pendrive no te preocupes ;).
+
+          #### Vía internet
+
+          Existen muchas maneras de enviar ficheros grandes por internet puedes por ejemplo usar <a href="https://www.wetransfer.com/?to=contact@kontrabandofilmfestival.org" target="_blank">WeTransfer</a>
+          pero hay muchas más, usa el servicio que más comodo te resulte.
+
+          Si tienes cuenta en DropBox o GoogleDrive también puedes usarla.
+
+          Envíanos el link de descarga a nuestro email de contacto [contact@kontrabandofilmfestival.org](mailto:contact@kontrabandofilmfestival.org).
+
+          #### Por correo
+
+          Es un poco más lento pero también puedes hacernos llegar un CD por correo enviándolo
+          a la dirección de CineCiutat:
+
+          Carrer Emperadriu Eugènia, 6
+          07010 Palma
+          Illes Balears
+
+
+
       about:
         title: "El Festival"
         sections:
@@ -181,6 +216,10 @@ es:
     short_film_user_sessions:
       new:
         title: "Login"
+
+      forgot_password:
+        title: "Recuperar la contraseña"
+        button_send: "Enviar instrucciones"
 
     short_films:
 
@@ -241,9 +280,9 @@ es:
 
     short_films:
       show:
-        alert_not_paid: "La cuota de suscripción todavía no ha sido recibida"
-        alert_not_received: "La versión del Corto para proyectar aún no ha sido recibida"
-        alert_not_moderation_accepted: "El corto se encuentra en período de moderación"
+        alert_not_paid: "La cuota de suscripción todavía no ha sido recibida, puedes hacer el pago en cualquier momento mediante Paypal: [pagar ahora](%{pay_link})."
+        alert_not_received: "La versión del Corto para proyectar aún no ha sido recibida, porfavor visita nuestra [página de instruciones para enviarnos el corto](%{instructions_link})."
+        alert_not_moderation_accepted: "El corto se encuentra en período de moderación. Cuando hayamos recibido el pago de la inscripción y el corto en alta resolución daremos de alta tu corto en la web."
 
       create:
         success: "Corto enviado con éxito. Puedes utilizar los datos que nos has indicado para entrar en tu cuenta"

@@ -1,11 +1,20 @@
 <% title @short_film_user.title %>
 
 <section id="middle_content">
+  <% @alerts.each do |alert| %>
+    <div class="box error_box">
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td><%= BlueCloth.new(alert).to_html.html_safe %></td>
+        </tr>
+      </table>
+    </div>
+
+    <br />
+  <% end %>
+
   <div class="entry">
-    <section class="opened-article">
-      Puedes hacer el pago online
-      <%= link_to "aquí", short_film_online_purchases_path, :method => :post %>
-    </section>
 
     <section class="opened-article">
       <%= render :partial => "front/short_film_users/short_film_user", :locals => { :short_film_user => @short_film_user } %>

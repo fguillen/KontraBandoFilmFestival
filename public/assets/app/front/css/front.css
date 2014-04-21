@@ -14,3 +14,7 @@ body { padding-bottom: 70px; }
   height: 550px;
   margin-bottom: 20px;
 }
+
+ul.cmsms_details li > .fl {
+  height: 330px;
+}

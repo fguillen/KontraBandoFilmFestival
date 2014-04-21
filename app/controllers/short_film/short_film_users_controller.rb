@@ -4,12 +4,10 @@ class ShortFilm::ShortFilmUsersController < ShortFilm::ShortFilmController
   before_filter :require_short_film_user_to_be_the_one_logged, :only => [:show, :edit, :update, :destroy]
 
   def show
-    alerts = []
-    alerts << t("controllers.short_films.show.alert_not_paid") if !@short_film_user.paid_at?
-    alerts << t("controllers.short_films.show.alert_not_received") if !@short_film_user.received_at?
-    alerts << t("controllers.short_films.show.alert_not_moderation_accepted") if !@short_film_user.moderation_accepted?
-
-    flash.now[:alert] = alerts.join(". ") if !alerts.empty?
+    @alerts = []
+    @alerts << t("controllers.short_films.show.alert_not_paid", :pay_link => pay_short_film_online_purchases_path) if !@short_film_user.paid_at?
+    @alerts << t("controllers.short_films.show.alert_not_received", :instructions_link => front_page_path("send_short_film")) if !@short_film_user.received_at?
+    @alerts << t("controllers.short_films.show.alert_not_moderation_accepted") if !@short_film_user.moderation_accepted?
   end
 
   def new

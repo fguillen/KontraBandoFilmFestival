@@ -19,12 +19,12 @@
   <div class="project_sidebar">
     <footer class="entry-meta">
       <ul class="cmsms_details">
-        <li>
+<!--         <li>
           <p class="cmsms_details_title cmsms_like_title">Like it?</p>
           <div class="cmsms_details_links">
             <a class="cmsmsLike" href="#"><span><span>32</span></span></a>
           </div>
-        </li>
+        </li> -->
         <li>
           <p class="cmsms_details_title"><%= t("activerecord.attributes.short_film_user.created_at") %>:</p>
           <div class="cmsms_details_links">
@@ -64,39 +64,7 @@
         </li>
         <li class="cmsms_sharing">
           <div class="fl">
-            <div class="g-plusone" data-size="medium"></div>
-            <script type="text/javascript">
-              (function () {
-                var po = document.createElement('script'),
-                  s = document.getElementsByTagName('script')[0];
-
-                po.type = 'text/javascript';
-                po.async = true;
-                po.src = 'https://apis.google.com/js/plusone.js';
-
-                s.parentNode.insertBefore(po, s);
-              } )();
-            </script>
-          </div>
-          <div class="fl">
-            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
-            <script type="text/javascript">
-              !function (d, s, id) {
-                var js = undefined,
-                  fjs = d.getElementsByTagName(s)[0];
-
-                if (!d.getElementById(id)) {
-                  js = d.createElement(s);
-                  js.id = id;
-                  js.src = '//platform.twitter.com/widgets.js';
-
-                  fjs.parentNode.insertBefore(js, fjs);
-                }
-              } (document, 'script', 'twitter-wjs');
-            </script>
-          </div>
-          <div class="fl">
-            <div class="fb-like" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false" data-font="arial"></div>
+            <div class="fb-like" data-width="100" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
             <script type="text/javascript">
               (function (d, s, id) {
                 var js = undefined,
