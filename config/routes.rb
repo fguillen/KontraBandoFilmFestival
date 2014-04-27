@@ -1,5 +1,5 @@
 KontraBandoFilmFestival::Application.routes.draw do
-  root :to => "front/pages#show", :id => "coming_soon"
+  root :to => "front/pages#show", :id => "home"
 
   namespace :front do
     resources :pages, :only => [:show]

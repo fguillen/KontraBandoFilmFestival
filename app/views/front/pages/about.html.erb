@@ -31,140 +31,89 @@
       <div class="one_first first_column">
         <%= t("views.pages.about.sections.rules.text").to_md %>
 
-        <%= link_to "Envía tu corto", [:new, :short_film, :short_film_user], :class => "button_medium" %>
+        <%= link_to t("views.pages.about.sections.rules.send_short_film_link"), [:new, :short_film, :short_film_user], :class => "button_medium" %>
       </div>
 
       <div class="one_first first_column">
-        <h2>Responsables y coordinadores</h2>
+        <h3><%= t("views.pages.about.sections.people.title") %></h3>
       </div>
 
 
       <div class="one_half first_column">
         <article class="person_block">
           <figure>
-            <img alt="" class="max_width" src="/assets/vendor/riviera/images/img/about_2.jpg" />
+            <img alt="" class="max_width" src="/assets/app/front/img/people/<%= t("views.pages.about.sections.people.susana.name") %>.jpg" />
           </figure>
           <div class="person_info">
             <header class="entry-header person_header">
-              <h4 class="person_title">Alícia Gómez</h4>
-              <p class="person_subtitle">Coordinadora</p>
+              <h4 class="person_title"><%= t("views.pages.about.sections.people.susana.name") %></h4>
+              <p class="person_subtitle"><%= t("views.pages.about.sections.people.susana.subtitle") %></p>
             </header>
-            <p>We have created a visual drag&rsquo;n&rsquo;drop content editor to make website management be easy as a game -simply pull your content parts back and forth through the page, easily resize and edit.</p>
-            <footer class="entry-meta person_footer">
-              <a href="#" title="Twitter" target="_blank">Twitter</a>,
-              <a href="#" title="Facebook" target="_blank">Facebook</a>
-            </footer>
+            <p><%= t("views.pages.about.sections.people.susana.text") %></p>
           </div>
         </article>
       </div>
+
       <div class="one_half">
         <article class="person_block">
           <figure>
-            <img alt="" class="max_width" src="/assets/vendor/riviera/images/img/about_3.jpg" />
+            <img alt="" class="max_width" src="/assets/app/front/img/people/<%= t("views.pages.about.sections.people.marina.name") %>.jpg" />
           </figure>
           <div class="person_info">
             <header class="entry-header person_header">
-              <h4 class="person_title">Anne Massadier</h4>
-              <p class="person_subtitle">Responsable producción</p>
+              <h4 class="person_title"><%= t("views.pages.about.sections.people.marina.name") %></h4>
+              <p class="person_subtitle"><%= t("views.pages.about.sections.people.marina.subtitle") %></p>
             </header>
-            <p>Riviera is a Theme for Wordpress that offers a lot of benefits for those who seek to create a website that will reflect individual style, feature the most up-to-date design and functionality.</p>
-            <footer class="entry-meta person_footer">
-              <a href="#" title="Twitter" target="_blank">Twitter</a>,
-              <a href="#" title="Facebook" target="_blank">Facebook</a>
-            </footer>
+            <p><%= t("views.pages.about.sections.people.marina.text") %></p>
           </div>
         </article>
       </div>
+
       <div class="one_half first_column">
         <article class="person_block">
           <figure>
-            <img alt="" class="max_width" src="/assets/vendor/riviera/images/img/about_4.jpg" />
+            <img alt="" class="max_width" src="/assets/app/front/img/people/<%= t("views.pages.about.sections.people.anne.name") %>.jpg" />
           </figure>
           <div class="person_info">
             <header class="entry-header person_header">
-              <h4 class="person_title">Susana Munuera</h4>
-              <p class="person_subtitle">Surpervisora</p>
+              <h4 class="person_title"><%= t("views.pages.about.sections.people.anne.name") %></h4>
+              <p class="person_subtitle"><%= t("views.pages.about.sections.people.anne.subtitle") %></p>
             </header>
-            <p>Riviera was created by professionals that have done a great job of extending a standard Wordpress CMS by many custom features to turn it into a great website management tool.</p>
-            <footer class="entry-meta person_footer">
-              <a href="#" title="Twitter" target="_blank">Twitter</a>,
-              <a href="#" title="Facebook" target="_blank">Facebook</a>
-            </footer>
+            <p><%= t("views.pages.about.sections.people.anne.text") %></p>
           </div>
         </article>
       </div>
+
       <div class="one_half">
         <article class="person_block">
           <figure>
-            <img alt="" class="max_width" src="/assets/vendor/riviera/images/img/about_5.jpg" />
+            <img alt="" class="max_width" src="/assets/app/front/img/people/<%= t("views.pages.about.sections.people.alicia.name") %>.jpg" />
           </figure>
           <div class="person_info">
             <header class="entry-header person_header">
-              <h4 class="person_title">Mikel Ibarrola</h4>
-              <p class="person_subtitle">Ayudante comunicación</p>
+              <h4 class="person_title"><%= t("views.pages.about.sections.people.alicia.name") %></h4>
+              <p class="person_subtitle"><%= t("views.pages.about.sections.people.alicia.subtitle") %></p>
             </header>
-            <p>Wordpress has never been so convenient in use and functional. Wrapped in a premium design, cmsmasters&rsquo; custom admin panel is a fantastic solution for your website.</p>
-            <footer class="entry-meta person_footer">
-              <a href="#" title="Twitter" target="_blank">Twitter</a>,
-              <a href="#" title="Facebook" target="_blank">Facebook</a>
-            </footer>
+            <p><%= t("views.pages.about.sections.people.alicia.text") %></p>
           </div>
         </article>
       </div>
+
       <div class="one_half first_column">
         <article class="person_block">
           <figure>
-            <img alt="" class="max_width" src="/assets/vendor/riviera/images/img/about_4.jpg" />
+            <img alt="" class="max_width" src="/assets/app/front/img/people/<%= t("views.pages.about.sections.people.mikel.name") %>.jpg" />
           </figure>
           <div class="person_info">
             <header class="entry-header person_header">
-              <h4 class="person_title">Tomàs Vallés</h4>
-              <p class="person_subtitle">Coordinador</p>
+              <h4 class="person_title"><%= t("views.pages.about.sections.people.mikel.name") %></h4>
+              <p class="person_subtitle"><%= t("views.pages.about.sections.people.mikel.subtitle") %></p>
             </header>
-            <p>Riviera was created by professionals that have done a great job of extending a standard Wordpress CMS by many custom features to turn it into a great website management tool.</p>
-            <footer class="entry-meta person_footer">
-              <a href="#" title="Twitter" target="_blank">Twitter</a>,
-              <a href="#" title="Facebook" target="_blank">Facebook</a>
-            </footer>
+            <p><%= t("views.pages.about.sections.people.mikel.text") %></p>
           </div>
         </article>
       </div>
-      <div class="one_half">
-        <article class="person_block">
-          <figure>
-            <img alt="" class="max_width" src="/assets/vendor/riviera/images/img/about_5.jpg" />
-          </figure>
-          <div class="person_info">
-            <header class="entry-header person_header">
-              <h4 class="person_title">Fernando</h4>
-              <p class="person_subtitle">Ayudante comunicación</p>
-            </header>
-            <p>Wordpress has never been so convenient in use and functional. Wrapped in a premium design, cmsmasters&rsquo; custom admin panel is a fantastic solution for your website.</p>
-            <footer class="entry-meta person_footer">
-              <a href="#" title="Twitter" target="_blank">Twitter</a>,
-              <a href="#" title="Facebook" target="_blank">Facebook</a>
-            </footer>
-          </div>
-        </article>
-      </div>
-      <div class="one_half first_column">
-        <article class="person_block">
-          <figure>
-            <img alt="" class="max_width" src="/assets/vendor/riviera/images/img/about_4.jpg" />
-          </figure>
-          <div class="person_info">
-            <header class="entry-header person_header">
-              <h4 class="person_title">Marina González</h4>
-              <p class="person_subtitle">Coordinadora</p>
-            </header>
-            <p>Riviera was created by professionals that have done a great job of extending a standard Wordpress CMS by many custom features to turn it into a great website management tool.</p>
-            <footer class="entry-meta person_footer">
-              <a href="#" title="Twitter" target="_blank">Twitter</a>,
-              <a href="#" title="Facebook" target="_blank">Facebook</a>
-            </footer>
-          </div>
-        </article>
-      </div>
+
 
       <div class="cl"></div>
 

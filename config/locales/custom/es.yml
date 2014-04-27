@@ -213,6 +213,36 @@ es:
               1. En el caso de incumplimiento total o parcial de las bases, no se devolverá el importe de la inscripción.
               1. En caso de resultar premiado se deberá presentar la documentación que acredite la identidad del autor.
 
+            send_short_film_link: "Envía tu corto"
+
+          people:
+            title: "Responsables y coordinadores"
+
+            susana:
+              name: "Susana"
+              subtitle: "Responsable de las mareas"
+              text: "Coordinación y actividades paralelas."
+
+            marina:
+              name: "Marina"
+              subtitle: "Responsable del viento"
+              text: "Coordinación y actividades paralelas."
+
+            anne:
+              name: "Anne"
+              subtitle: "Responsable de la armonía"
+              text: "Difusión en red."
+
+            alicia:
+              name: "Alicia"
+              subtitle: "Responsable del equilibrio"
+              text: "Contenidos y comunicación."
+
+            mikel:
+              name: "Mikel"
+              subtitle: "Responsable de las estrellas"
+              text: "Producción y financiación."
+
     short_film_user_sessions:
       new:
         title: "Login"
