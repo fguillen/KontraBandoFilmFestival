@@ -49,9 +49,9 @@ class ShortFilm::ShortFilmUsersController < ShortFilm::ShortFilmController
     if @short_film_user.update_attributes(params[:short_film_user])
       ShortFilmUserSession.create(@short_film_user)
       flash[:notice] = t("controllers.short_films.reset_password.success")
-      redirect_back_or_default short_film_root_path
+      redirect_back_or_default [:short_film, @short_film_user]
     else
-      flash.now[:alert] = t("controllers.short_films.reset_password.errors")
+      flash.now[:alert] = t("controllers.short_films.reset_password.error")
       render :reset_password
     end
   end

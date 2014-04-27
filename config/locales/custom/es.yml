@@ -93,6 +93,8 @@ es:
       short_films: "Los Cortos"
       send_your_short_film: "Envía tu Corto"
       blog: "Blog"
+      contact: "Contacto"
+      login: "Login"
 
 
     pages:
@@ -161,9 +163,10 @@ es:
           Es un poco más lento pero también puedes hacernos llegar un CD por correo enviándolo
           a la dirección de CineCiutat:
 
-          Carrer Emperadriu Eugènia, 6
-          07010 Palma
-          Illes Balears
+          CineCiutat (KontrabandoFilmFestival) <br />
+          Carrer Emperadriu Eugènia, 6 <br />
+          07010 Palma <br />
+          Illes Balears <br />
 
 
 
@@ -204,7 +207,7 @@ es:
               1. Los cortos deben tener una duración máxima de 7 minutos y ser de realización no anterior a enero de 2013.
               1. Se pueden presentar en cualquier formato excepto .MOV
               1. Para inscribirse hay que abonar 10 Euros por cada corto presentado, que se destinarán a cubrir gastos del festival y a contribuir al proyecto de CineCiutat.
-              1. La inscripción ha de hacerse en www.kontrabandoﬁlmfestival.org
+              1. La inscripción ha de hacerse en http://kontrabandoﬁlmfestival.org
               1. No se admitirán cortos con ﬁnalidad publicitaria ni montajes parciales de material audiovisual salvo que cuenten con la autorización del autor.
               1. Los trabajos no pueden contener declaraciones, información o hechos que puedan perjudicar o denigrar a cualquier persona o grupo de personas.
               1. El festival no se hace responsable de los contenidos de los cortos, siendo estos responsabilidad del director o, en caso de ser menor de edad, de su tutor legal.
@@ -266,6 +269,18 @@ es:
 
       new:
         title: "Enviar tu Corto"
+        explanation: |
+          El proceso para presentar tu corto consta de 3 pasos:
+
+          1. Rellena el formulario de inscripción que aparece aquí debajo
+          2. Paga la cuota de inscripción (10€)
+          3. Haznos llegar el vídeo en alta resolución.
+
+          Cuando hayas completado el paso 1 te daremos instruciones para completar
+          los demás pasos.
+
+
+
         required_fields: "Los campos requeridos están marcados con"
         send_button: "Enviar Corto"
         title_info: "Detalles del corto"
@@ -282,12 +297,18 @@ es:
         school_help_text: "Si este corto es parte de una actividad escolar indica el nombre del centro"
         synopsis_placeholder: "De qué va tu corto?"
 
+      reset_password:
+        title: "Recuperar la contraseña"
+        text: "Por favor indica en este formulario cuál quieres que sea tu nueva contraseña"
+        button_send: "Usar esta nueva contraseña"
+
+
+
     sessions:
       new:
         title: "Login"
         button_send: "Enviar credenciales"
         button_forgot_password: "¿Olvidaste tu contraseña?"
-
 
 
   controllers:
@@ -324,7 +345,11 @@ es:
 
       password_reset:
         success: "Password actualizada con éxito. Ya estás autenticado"
-        success: "Algún error encontrado al intentar actualizar password"
+        error: "Algún error encontrado al intentar actualizar password"
+
+      reset_password:
+        success: "Tu contraseña se ha actualizado con éxito"
+        error: "Algún error al intentar camnbiar tu contraseña"
 
     online_purchases:
       create:

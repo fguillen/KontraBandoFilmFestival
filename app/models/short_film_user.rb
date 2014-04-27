@@ -112,4 +112,8 @@ class ShortFilmUser < ActiveRecord::Base
     producer_date_of_birth > 18.years.ago
   end
 
+  def send_reset_password_email
+    reset_perishable_token!
+    Notifier.short_film_user_reset_password(self).deliver
+  end
 end

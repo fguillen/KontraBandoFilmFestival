@@ -1,7 +1,7 @@
 class ShortFilm::OnlinePurchasesController < ShortFilm::ShortFilmController
   before_filter :require_short_film_user, :only => [:create]
 
-  def create
+  def pay
     online_purchase =
       OnlinePurchase.create!(
         :short_film_user_id => current_short_film_user.id,

@@ -28,10 +28,16 @@
         <% end %>
       </li>
 
-      <li>
-        <a href="javascript:alert('Aquí va la URL del blog')">
-          <span><%= t("views.menu.blog") %></span>
-        </a>
+      <li class="<%= front_menu_class(:pages_about) %>">
+        <%= link_to "mailto:info@kontrabandofilmfestival.org" do %>
+          <span><%= t("views.menu.contact") %></span>
+        <% end %>
+      </li>
+
+      <li class="<%= front_menu_class(:pages_about) %>">
+        <%= link_to short_film_login_path do %>
+          <span><%= t("views.menu.login") %></span>
+        <% end %>
       </li>
     </ul>
     <div class="cl"></div>

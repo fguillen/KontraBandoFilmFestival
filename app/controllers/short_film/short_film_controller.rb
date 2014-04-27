@@ -17,8 +17,6 @@ class ShortFilm::ShortFilmController < ApplicationController
   end
 
   def require_short_film_user_to_be_the_one_logged
-    Rails.logger.info "XXX: current_short_film_user: #{current_short_film_user.id}"
-    Rails.logger.info "XXX: @short_film_user: #{@short_film_user.id}"
     unless current_short_film_user == @short_film_user
       not_allowed
     end

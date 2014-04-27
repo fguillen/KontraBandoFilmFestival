@@ -1,3 +1,7 @@
-<% title "Envía tu corto" %>
+<% title t("views.short_films.new.title") %>
+
+<div class="one_first first_column">
+  <%= t("views.short_films.new.explanation").to_md %>
+</div>
 
 <%= render :partial => "form" %>
