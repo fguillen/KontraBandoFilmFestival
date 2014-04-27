@@ -3,7 +3,7 @@
 <section id="content">
   <div class="entry">
     <div class="cmsms-form-builder">
-      <%= form_for [:short_film, @short_film_user], :html => { :class => "form-horizontal", :id => "short_film_user_form" } do |f| %>
+      <%= form_for [:short_film, @short_film_user], :html => { :class => "form-horizontal", :id => "short_film_user_form", :multipart => true } do |f| %>
         <%= render "/shared/form_errors", :object => f.object %>
 
         <p><%= t("views.short_films.new.required_fields") %> <span class="color_3">*</span></p>
