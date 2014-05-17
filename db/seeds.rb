@@ -10,7 +10,6 @@ ActiveRecord::Base.transaction do
         :length_seconds => 30,
         :language => :spanish,
         :genre => :action,
-        :credits_direction => Faker::Lorem.word,
         :director_name => Faker::Lorem.word,
         :director_dni => "111222333",
         :director_fecha_of_birth => Date.parse("1990-01-02"),

@@ -16,7 +16,6 @@ FactoryGirl.define do
     length_seconds 20
     genre "action"
     language "spanish"
-    credits_direction "Director Name"
     synopsis "The Synopsis"
     director_name "The Producer Name"
     director_dni "The Producer DNI"

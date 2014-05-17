@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140517202815) do
+ActiveRecord::Schema.define(version: 20140517204107) do
 
   create_table "admin_users", force: true do |t|
     t.string   "name",              null: false
@@ -67,7 +67,6 @@ ActiveRecord::Schema.define(version: 20140517202815) do
     t.text     "script_embed"
     t.string   "subtitles_language"
     t.string   "genre",                  null: false
-    t.string   "credits_direction",      null: false
     t.string   "credits_script"
     t.string   "credits_camera"
     t.string   "credits_art_direction"

@@ -54,7 +54,6 @@ es:
         script_embed: "'Script embed' en plataforma de videos online"
         subtitles_language: "Idioma de los subtitulos"
         genre: "Género"
-        credits_direction: "Dirección"
         credits_script: "Guión"
         credits_camera: "Cámara"
         credits_art_direction: "Direción de Arte"

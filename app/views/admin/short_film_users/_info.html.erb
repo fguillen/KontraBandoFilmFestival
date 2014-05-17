@@ -50,10 +50,22 @@
 </div>
 
 <div class="panel panel-default">
+  <div class="panel-heading">Director</div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Name</dt><dd><%= short_film_user.director_name %></dd>
+      <dt>DNI</dt><dd><%= short_film_user.director_dni %></dd>
+      <dt>Date of Birth</dt><dd><%= short_film_user.director_date_of_birth.to_s(:datehuman) %></dd>
+      <dt>Phone</dt><dd><%= short_film_user.director_phone %></dd>
+      <dt>Email</dt><dd><%= short_film_user.director_email %></dd>
+    </dl>
+  </div>
+</div>
+
+<div class="panel panel-default">
   <div class="panel-heading">Credits</div>
   <div class="panel-body">
     <dl class="dl-horizontal">
-      <dt>Direction</dt><dd><%= short_film_user.credits_direction %></dd>
       <dt>Script</dt><dd><%= short_film_user.credits_script %></dd>
       <dt>Camera</dt><dd><%= short_film_user.credits_camera %></dd>
       <dt>Art Direction</dt><dd><%= short_film_user.credits_art_direction %></dd>
@@ -65,18 +77,6 @@
   </div>
 </div>
 
-<div class="panel panel-default">
-  <div class="panel-heading">Producer</div>
-  <div class="panel-body">
-    <dl class="dl-horizontal">
-      <dt>Name</dt><dd><%= short_film_user.director_name %></dd>
-      <dt>DNI</dt><dd><%= short_film_user.director_dni %></dd>
-      <dt>Date of Birth</dt><dd><%= short_film_user.director_date_of_birth.to_s(:datehuman) %></dd>
-      <dt>Phone</dt><dd><%= short_film_user.director_phone %></dd>
-      <dt>Email</dt><dd><%= short_film_user.director_email %></dd>
-    </dl>
-  </div>
-</div>
 
 
 <p>
