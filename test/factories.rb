@@ -12,17 +12,17 @@ FactoryGirl.define do
 
   factory :short_film_user do
     title "Short Film Title"
-    length_minutes 10
+    length_minutes 6
     length_seconds 20
     genre "action"
     language "spanish"
     credits_direction "Director Name"
     synopsis "The Synopsis"
-    producer_name "The Producer Name"
-    producer_dni "The Producer DNI"
-    producer_date_of_birth "1990-01-01"
-    producer_phone "9191919191"
-    sequence(:producer_email) { |n| "producer_#{n}@email.com" }
+    director_name "The Producer Name"
+    director_dni "The Producer DNI"
+    director_date_of_birth "1990-01-01"
+    director_phone "9191919191"
+    sequence(:director_email) { |n| "director_#{n}@email.com" }
     accept_authenticity true
     accept_authorization true
     accept_responsability true

@@ -13,13 +13,13 @@
         <h2><%= t("views.short_film_session.new.title") %></h2>
 
         <div class="form_info cmsms_input">
-          <%= f.label :producer_email do %><%= t("activerecord.attributes.short_film_user.producer_email") %> <span class="color_3">*</span><% end %>
-          <%= f.text_field :producer_email, :class => "validate[required]", :size => "22" %>
+          <%= f.label :director_email do %><%= t("activerecord.attributes.short_film_user.director_email") %> <span class="color_3">*</span><% end %>
+          <%= f.text_field :director_email, :class => "validate[required]", :size => "22" %>
         </div>
 
         <div class="form_info cmsms_input">
           <%= f.label :password do %><%= t("activerecord.attributes.short_film_user.password") %> <span class="color_3">*</span><% end %>
-          <%= f.text_field :password, :class => "validate[required]", :size => "22" %>
+          <%= f.password_field :password, :class => "validate[required]", :size => "22" %>
           <p><%= link_to t("views.sessions.new.button_forgot_password"), short_film_forgot_password_path %></p>
         </div>
 

@@ -195,14 +195,14 @@
   </fieldset>
 
   <fieldset>
-    <legend>Producer</legend>
+    <legend>Director</legend>
 
     <div class="form-group required">
-      <%= f.label :producer_name, :class => "col-sm-2 control-label" %>
+      <%= f.label :director_name, :class => "col-sm-2 control-label" %>
 
       <div class="col-sm-10">
         <div class="input-group">
-          <%= f.text_field :producer_name, :class => "form-control", :required => true, :placeholder => "Producer's name" %>
+          <%= f.text_field :director_name, :class => "form-control", :required => true, :placeholder => "Director's name" %>
           <span class="input-group-addon">
             <span class="glyphicon glyphicon-asterisk" data-toggle="tooltip" data-placement="right" title="Required field"></span>
           </span>
@@ -211,11 +211,11 @@
     </div>
 
     <div class="form-group required">
-      <%= f.label :producer_dni, :class => "col-sm-2 control-label" %>
+      <%= f.label :director_dni, :class => "col-sm-2 control-label" %>
 
       <div class="col-sm-10">
         <div class="input-group">
-          <%= f.text_field :producer_dni, :class => "form-control", :required => true, :placeholder => "Producer's DNI" %>
+          <%= f.text_field :director_dni, :class => "form-control", :required => true, :placeholder => "Director's DNI" %>
           <span class="input-group-addon">
             <span class="glyphicon glyphicon-asterisk" data-toggle="tooltip" data-placement="right" title="Required field"></span>
           </span>
@@ -224,19 +224,19 @@
     </div>
 
     <div class="form-group required">
-      <%= f.label :producer_date_of_birth, :class => "col-sm-2 control-label" %>
+      <%= f.label :director_date_of_birth, :class => "col-sm-2 control-label" %>
 
       <div class="col-sm-3">
-        <%= f.date_select(:producer_date_of_birth) %>
+        <%= f.date_select(:director_date_of_birth) %>
       </div>
     </div>
 
     <div class="form-group required">
-      <%= f.label :producer_phone, :class => "col-sm-2 control-label" %>
+      <%= f.label :director_phone, :class => "col-sm-2 control-label" %>
 
       <div class="col-sm-4">
         <div class="input-group">
-          <%= f.text_field :producer_phone, :class => "form-control", :required => true, :placeholder => "Producer's phone" %>
+          <%= f.text_field :director_phone, :class => "form-control", :required => true, :placeholder => "Director's phone" %>
           <span class="input-group-addon">
             <span class="glyphicon glyphicon-asterisk" data-toggle="tooltip" data-placement="right" title="Required field"></span>
           </span>
@@ -245,11 +245,11 @@
     </div>
 
     <div class="form-group required">
-      <%= f.label :producer_email, :class => "col-sm-2 control-label" %>
+      <%= f.label :director_email, :class => "col-sm-2 control-label" %>
 
       <div class="col-sm-10">
         <div class="input-group">
-          <%= f.text_field :producer_email, :class => "form-control", :required => true, :placeholder => "Producer's email" %>
+          <%= f.text_field :director_email, :class => "form-control", :required => true, :placeholder => "Director's email" %>
           <span class="input-group-addon">
             <span class="glyphicon glyphicon-asterisk" data-toggle="tooltip" data-placement="right" title="Required field"></span>
           </span>

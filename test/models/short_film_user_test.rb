@@ -9,8 +9,8 @@ class ShortFilmUserTest < ActiveSupport::TestCase
     short_film_user = FactoryGirl.create(:short_film_user, :length_minutes => 1, :length_seconds => 2)
     assert_equal("01:02", short_film_user.length)
 
-    short_film_user = FactoryGirl.create(:short_film_user, :length_minutes => 100, :length_seconds => 20)
-    assert_equal("100:20", short_film_user.length)
+    short_film_user = FactoryGirl.create(:short_film_user, :length_minutes => 6, :length_seconds => 20)
+    assert_equal("06:20", short_film_user.length)
   end
 
   def test_previous
@@ -37,10 +37,10 @@ class ShortFilmUserTest < ActiveSupport::TestCase
   end
 
   def test_validate_tutor_fields_if_lower_age
-    short_film_user = FactoryGirl.create(:short_film_user, :producer_date_of_birth => "1990-01-01")
+    short_film_user = FactoryGirl.create(:short_film_user, :director_date_of_birth => "1990-01-01")
     assert_equal(true, short_film_user.valid?)
 
-    short_film_user.producer_date_of_birth = "2000-01-01"
+    short_film_user.director_date_of_birth = "2000-01-01"
     assert_equal(false, short_film_user.valid?)
 
     assert_equal(true, short_film_user.errors.include?(:tutor_kind))
@@ -61,13 +61,13 @@ class ShortFilmUserTest < ActiveSupport::TestCase
   def test_underage
     short_film_user = FactoryGirl.build(:short_film_user)
 
-    short_film_user.producer_date_of_birth = nil
+    short_film_user.director_date_of_birth = nil
     assert_equal(false, short_film_user.underage?)
 
-    short_film_user.producer_date_of_birth = "1990-01-01"
+    short_film_user.director_date_of_birth = "1990-01-01"
     assert_equal(false, short_film_user.underage?)
 
-    short_film_user.producer_date_of_birth = 16.years.ago
+    short_film_user.director_date_of_birth = 16.years.ago
     assert_equal(true, short_film_user.underage?)
 
   end

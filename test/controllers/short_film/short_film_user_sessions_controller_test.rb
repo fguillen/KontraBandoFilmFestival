@@ -12,7 +12,7 @@ class ShortFilm::ShortFilmUserSessionsControllerTest < ActionController::TestCas
     post(
       :create,
       :short_film_user_session => {
-        :producer_email => short_film_user.producer_email,
+        :director_email => short_film_user.director_email,
         :password => short_film_user.password
       }
     )
@@ -25,7 +25,7 @@ class ShortFilm::ShortFilmUserSessionsControllerTest < ActionController::TestCas
     post(
       :create,
       :short_film_user_session => {
-        :producer_email => "email",
+        :director_email => "email",
         :password => "password"
       }
     )
@@ -49,7 +49,7 @@ class ShortFilm::ShortFilmUserSessionsControllerTest < ActionController::TestCas
     post(
       :forgot_password_send_email,
       :short_film_user_session => {
-        :producer_email => "not-exists"
+        :director_email => "not-exists"
       }
     )
 
@@ -64,7 +64,7 @@ class ShortFilm::ShortFilmUserSessionsControllerTest < ActionController::TestCas
     post(
       :forgot_password_send_email,
       :short_film_user_session => {
-        :producer_email => short_film_user.producer_email
+        :director_email => short_film_user.director_email
       }
     )
 

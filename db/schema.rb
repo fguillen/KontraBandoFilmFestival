@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140316190132) do
+ActiveRecord::Schema.define(version: 20140517202815) do
 
   create_table "admin_users", force: true do |t|
     t.string   "name",              null: false
@@ -76,10 +76,10 @@ ActiveRecord::Schema.define(version: 20140316190132) do
     t.string   "credits_other"
     t.text     "credits_actors"
     t.text     "synopsis",               null: false
-    t.string   "producer_name",          null: false
-    t.string   "producer_dni",           null: false
-    t.string   "producer_phone",         null: false
-    t.string   "producer_email",         null: false
+    t.string   "director_name",          null: false
+    t.string   "director_dni",           null: false
+    t.string   "director_phone",         null: false
+    t.string   "director_email",         null: false
     t.string   "school_name"
     t.string   "crypted_password"
     t.string   "password_salt"
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 20140316190132) do
     t.string   "tutor_dni"
     t.string   "tutor_phone"
     t.string   "tutor_email"
-    t.date     "producer_date_of_birth", null: false
+    t.date     "director_date_of_birth", null: false
     t.boolean  "accept_authenticity"
     t.boolean  "accept_authorization"
     t.boolean  "accept_responsability"

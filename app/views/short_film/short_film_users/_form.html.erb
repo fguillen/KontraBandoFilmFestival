@@ -6,17 +6,20 @@
       <%= form_for [:short_film, @short_film_user], :html => { :class => "form-horizontal", :id => "short_film_user_form", :multipart => true } do |f| %>
         <%= render "/shared/form_errors", :object => f.object %>
 
+        <h2><%= t("views.short_films.new.explanation_title") %></h2>
+
+        <div class="one_first first_column">
+          <%= t("views.short_films.new.explanation").to_md %>
+        </div>
+
         <p><%= t("views.short_films.new.required_fields") %> <span class="color_3">*</span></p>
 
         <%= render :partial => "short_film/short_film_users/section_info", :locals => { :f => f } %>
-        <%= render :partial => "short_film/short_film_users/section_script_embed", :locals => { :f => f } %>
         <%= render :partial => "short_film/short_film_users/section_thumbnail", :locals => { :f => f } %>
+        <%= render :partial => "short_film/short_film_users/section_director", :locals => { :f => f } %>
         <%= render :partial => "short_film/short_film_users/section_credits", :locals => { :f => f } %>
-        <%= render :partial => "short_film/short_film_users/section_producer", :locals => { :f => f } %>
         <%= render :partial => "short_film/short_film_users/section_tutor", :locals => { :f => f } %>
-        <%= render :partial => "short_film/short_film_users/section_school", :locals => { :f => f } %>
         <%= render :partial => "short_film/short_film_users/section_accept", :locals => { :f => f } %>
-
 
         <div class="cl"></div>
         <div>

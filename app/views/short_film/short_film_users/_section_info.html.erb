@@ -8,9 +8,9 @@
 <div class="form_info cmsms_input">
   <%= f.label :length_minutes do %><%= t("activerecord.attributes.short_film_user.length") %> <span class="color_3">*</span><% end %>
   <div style="clear:both">
-    <%= f.text_field :length_minutes, :class => "validate[required]", :placeholder => "MM", :style => "float: left; width: 60px" %>
+    <%= f.number_field :length_minutes, :class => "validate[required]", :placeholder => "MM", :style => "float: left; width: 60px" %>
     <span style="float: left; margin: 0 10px"> : </span>
-    <%= f.text_field :length_seconds, :class => "validate[required]", :placeholder => "SS", :style => "float: left; width: 60px" %>
+    <%= f.number_field :length_seconds, :class => "validate[required]", :placeholder => "SS", :style => "float: left; width: 60px" %>
   </div>
   <div style="clear:both" />
   <br />

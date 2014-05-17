@@ -11,17 +11,17 @@ ActiveRecord::Base.transaction do
         :language => :spanish,
         :genre => :action,
         :credits_direction => Faker::Lorem.word,
-        :producer_name => Faker::Lorem.word,
-        :producer_dni => "111222333",
-        :producer_fecha_of_birth => Date.parse("1990-01-02"),
-        :producer_phone => "111222333",
-        :producer_email => "producer_#{index}@email.com",
+        :director_name => Faker::Lorem.word,
+        :director_dni => "111222333",
+        :director_fecha_of_birth => Date.parse("1990-01-02"),
+        :director_phone => "111222333",
+        :director_email => "director_#{index}@email.com",
         :password => "pass",
         :password_confirmation => "pass",
         :thumbnail => File.open("#{Rails.root}/test/fixtures/pic.jpg")
       )
 
-    puts "Created short_film_user [#{short_film_user.id}] – #{short_film_user.producer_email}"
+    puts "Created short_film_user [#{short_film_user.id}] – #{short_film_user.director_email}"
   end
 
   email = "admin@email.com"

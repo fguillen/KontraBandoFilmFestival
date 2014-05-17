@@ -1,0 +1,39 @@
+<h2><%= t("views.short_films.new.title_director") %></h2>
+<p><%= t("views.short_films.new.director_help_text") %></p>
+
+<div class="form_info cmsms_input">
+<%= f.label :director_name do %><%= t("activerecord.attributes.short_film_user.director_name") %> <span class="color_3">*</span><% end %>
+  <%= f.text_field :director_name, :class => "validate[required]" %>
+</div>
+
+<div class="form_info cmsms_input">
+  <%= f.label :director_email do %><%= t("activerecord.attributes.short_film_user.director_email") %> <span class="color_3">*</span><% end %>
+  <%= f.text_field :director_email, :class => "validate[required,custom[email]]", :size => "22" %>
+</div>
+
+<div class="form_info cmsms_input">
+  <%= f.label :password do %><%= t("activerecord.attributes.short_film_user.password") %> <span class="color_3">*</span><% end %>
+  <%= f.password_field :password, :class => "validate[required]" %>
+</div>
+
+<div class="form_info cmsms_input">
+<%= f.label :password_confirmation do %><%= t("activerecord.attributes.short_film_user.password_confirmation") %> <span class="color_3">*</span><% end %>
+  <%= f.password_field :password_confirmation, :class => "validate[required]" %>
+</div>
+
+<div class="form_info cmsms_input">
+  <%= f.label :director_dni do %><%= t("activerecord.attributes.short_film_user.director_dni") %> <span class="color_3">*</span><% end %>
+  <%= f.text_field :director_dni, :class => "validate[required]" %>
+</div>
+
+<div class="form_info cmsms_select">
+  <%= f.label :director_date_of_birth do %><%= t("activerecord.attributes.short_film_user.director_date_of_birth") %> <span class="color_3">*</span><% end %>
+  <br />
+  <%= f.date_select(:director_date_of_birth, :prompt => true, :start_year => 1996, :end_year => 2001) %>
+</div>
+
+<div class="form_info cmsms_input">
+  <%= f.label :director_phone do %><%= t("activerecord.attributes.short_film_user.director_phone") %> <span class="color_3">*</span><% end %>
+  <%= f.text_field :director_phone, :class => "validate[required]" %>
+</div>
+

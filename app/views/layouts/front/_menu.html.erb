@@ -28,9 +28,9 @@
         <% end %>
       </li>
 
-      <li class="<%= front_menu_class(:pages_about) %>">
-        <%= link_to "mailto:info@kontrabandofilmfestival.org" do %>
-          <span><%= t("views.menu.contact") %></span>
+      <li class="<%= front_menu_class(:contributors) %>">
+        <%= link_to front_page_path("contributors") do %>
+          <span><%= t("views.menu.contributors") %></span>
         <% end %>
       </li>
 

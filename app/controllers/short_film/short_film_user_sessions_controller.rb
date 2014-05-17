@@ -27,7 +27,7 @@ class ShortFilm::ShortFilmUserSessionsController < ShortFilm::ShortFilmControlle
   end
 
   def forgot_password_send_email
-    short_film_user = ShortFilmUser.find_by_producer_email( params[:short_film_user_session][:producer_email] )
+    short_film_user = ShortFilmUser.find_by_director_email( params[:short_film_user_session][:director_email] )
 
     if short_film_user
       short_film_user.send_reset_password_email

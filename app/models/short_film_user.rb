@@ -1,6 +1,6 @@
 class ShortFilmUser < ActiveRecord::Base
   acts_as_authentic do |c|
-    c.email_field = :producer_email
+    c.email_field = :director_email
     c.validate_email_field = false
   end
 
@@ -33,18 +33,18 @@ class ShortFilmUser < ActiveRecord::Base
 
   validates :title, :presence => true
   validates :length_minutes, :presence => true
+  validates :length_minutes, :numericality => { :less_than_or_equal_to => 7 }
   # validates :length_seconds, :presence => true
   validates :language, :presence => true
   validates :genre, :presence => true
-  validates :credits_direction, :presence => true
 
   validates :synopsis, :presence => true
-  validates :producer_name, :presence => true
-  validates :producer_dni, :presence => true
-  validates :producer_date_of_birth, :presence => true
-  validates :producer_phone, :presence => true
-  validates :producer_email, :presence => true
-  validates :producer_email, :uniqueness => true, :format => { :with => RubyRegex::Email }
+  validates :director_name, :presence => true
+  validates :director_dni, :presence => true
+  validates :director_date_of_birth, :presence => true
+  validates :director_phone, :presence => true
+  validates :director_email, :presence => true
+  validates :director_email, :uniqueness => true, :format => { :with => RubyRegex::Email }
 
   validates :tutor_kind, :presence => true, :if => Proc.new { |e| e.underage? }
   validates :tutor_name, :presence => true, :if => Proc.new { |e| e.underage? }
@@ -108,8 +108,8 @@ class ShortFilmUser < ActiveRecord::Base
   end
 
   def underage?
-    return false if producer_date_of_birth.nil?
-    producer_date_of_birth > 18.years.ago
+    return false if director_date_of_birth.nil?
+    director_date_of_birth > 18.years.ago
   end
 
   def send_reset_password_email
