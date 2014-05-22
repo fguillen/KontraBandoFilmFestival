@@ -15,7 +15,6 @@ class ShortFilmUser < ActiveRecord::Base
     :english,
     :spanish,
     :catalonian,
-    :no_sound,
     :other
   ]
 

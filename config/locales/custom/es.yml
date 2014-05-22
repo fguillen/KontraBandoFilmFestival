@@ -8,7 +8,6 @@ es:
       english: "Inglés"
       spanish: "Español"
       catalonian: "Catalán"
-      no_sound: "Mudo"
       other: "Otro"
       no_subs: "Sin subtítulos"
 
@@ -136,7 +135,19 @@ es:
 
       contributors:
         title: "Colaboradores"
-        text: "Coming Soon"
+        text: |
+          ## Filmin
+          <a href="https://www.filmin.es/" target="_blank"><img height="106" src="/assets/app/front/img/logos/filmin.jpg" /></a>
+
+          ## Norma Comics
+          <a href="http://normacomicsnuredduna.blogspot.de/" target="_blank"><img height="106" src="/assets/app/front/img/logos/norma.jpg" /></a>
+
+          ## Ajuntament de Palma, Juventut
+          <a href="http://www.palmajove.es/portal/PALMAJOVE/home.jsp?codResi=4" target="_blank"><img height="106" src="/assets/app/front/img/logos/ajuntament_palma.jpg" /></a>
+
+          ## ACIB
+          <a href="https://sites.google.com/site/asociacionceliacosbaleares/" target="_blank"><img height="106" src="/assets/app/front/img/logos/acib.jpg" /></a>
+
 
       send_short_film:
         title: "Enviar el corto en alta resolución"
@@ -210,36 +221,21 @@ es:
 
             susana:
               name: "Susana"
-              subtitle: "Responsable de las mareas"
-              text: "Coordinación y actividades paralelas."
 
             marina:
               name: "Marina"
-              subtitle: "Responsable del viento"
-              text: "Coordinación y actividades paralelas."
 
             anne:
               name: "Anne"
-              subtitle: "Responsable de la armonía"
-              text: "Difusión en red."
 
             alicia:
               name: "Alicia"
-              subtitle: "Responsable del equilibrio"
-              text: "Contenidos y comunicación."
 
             mikel:
               name: "Mikel"
-              subtitle: "Responsable de las estrellas"
-              text: "Producción y financiación."
 
     short_film_users:
       show:
-        facebook_like_title: "Premio del público"
-        facebook_like_text: |
-          El premio del público se decidirá a partir de los _likes_
-          que cada corto haya tenido, así que ánimo y apunta en
-          tu facebook los cortos que más te gusten.
 
     short_film_user_sessions:
       new:
