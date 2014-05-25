@@ -98,8 +98,11 @@ es:
 
     pages:
       home:
-        title: ""
+        title: "KBFF"
         sections:
+
+          organizers:
+            title: "Una iciativa de ..."
 
           top:
             title: "KBFF"
@@ -133,20 +136,11 @@ es:
       coming_soon:
         title: "Coming Soon"
 
+      sponsors:
+        title: "Patrocinadores"
+
       contributors:
         title: "Colaboradores"
-        text: |
-          ## Filmin
-          <a href="https://www.filmin.es/" target="_blank"><img height="106" src="/assets/app/front/img/logos/filmin.jpg" /></a>
-
-          ## Norma Comics
-          <a href="http://normacomicsnuredduna.blogspot.de/" target="_blank"><img height="106" src="/assets/app/front/img/logos/norma.jpg" /></a>
-
-          ## Ajuntament de Palma, Juventut
-          <a href="http://www.palmajove.es/portal/PALMAJOVE/home.jsp?codResi=4" target="_blank"><img height="106" src="/assets/app/front/img/logos/ajuntament_palma.jpg" /></a>
-
-          ## ACIB
-          <a href="https://sites.google.com/site/asociacionceliacosbaleares/" target="_blank"><img height="106" src="/assets/app/front/img/logos/acib.jpg" /></a>
 
 
       send_short_film:

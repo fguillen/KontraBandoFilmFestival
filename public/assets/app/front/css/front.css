@@ -3,8 +3,8 @@
 /* for the bottom fixed nav bar */
 body {
   padding-bottom: 70px;
-  background-color: rgb(106,2,3);
-  background-image: none;
+/*  background-color: rgb(106,2,3);
+  background-image: none;*/
 }
 
 /* remove nav bar border radious */

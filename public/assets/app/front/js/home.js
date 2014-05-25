@@ -79,6 +79,6 @@ $(document).ready(function() {
   $('#cmsms_clients_slider55').cmsmsClientsSlider( {
     sliderBlock : '#cmsms_clients_slider55',
     sliderItems : '.cmsms_clients_items',
-    clientsInPage : 5
+    clientsInPage : 4
   } );
 }); //ready
