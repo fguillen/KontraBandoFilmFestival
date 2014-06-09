@@ -66,19 +66,4 @@ $(document).ready(function() {
     clientsInPage : 4
   } );
 
-    // short_films list
-
-  $('#portfolio_shortcode_1 .post_type_list').cmsmsResponsiveContentSlider( {
-    sliderWidth : '100%',
-    sliderHeight : 'auto',
-    animationSpeed : 500,
-    animationEffect : 'slide',
-    animationEasing : 'easeInOutExpo',
-    pauseTime : 0,
-    activeSlide : 1,
-    touchControls : true,
-    pauseOnHover : false,
-    arrowNavigation : true,
-    slidesNavigation : false
-  });
 }); //ready
