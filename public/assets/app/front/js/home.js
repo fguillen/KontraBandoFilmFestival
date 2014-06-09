@@ -60,7 +60,7 @@ $(document).ready(function() {
 
   // short_films list
 
-  $('#portfolio_shortcode_1 .post_type_list').cmsmsResponsiveContentSlider( {
+  $('#portfolio_shortcode_1.post_type_list').cmsmsResponsiveContentSlider( {
     sliderWidth : '100%',
     sliderHeight : 'auto',
     animationSpeed : 500,
