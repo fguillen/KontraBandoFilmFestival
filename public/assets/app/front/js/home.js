@@ -58,9 +58,17 @@ $(document).ready(function() {
     });
   }
 
-  // short_films list
+  // sponsors
 
-  $('#portfolio_shortcode_1.post_type_list').cmsmsResponsiveContentSlider( {
+  $('#cmsms_clients_slider55').cmsmsClientsSlider( {
+    sliderBlock : '#cmsms_clients_slider55',
+    sliderItems : '.cmsms_clients_items',
+    clientsInPage : 4
+  } );
+
+    // short_films list
+
+  $('#portfolio_shortcode_1 .post_type_list').cmsmsResponsiveContentSlider( {
     sliderWidth : '100%',
     sliderHeight : 'auto',
     animationSpeed : 500,
@@ -73,12 +81,4 @@ $(document).ready(function() {
     arrowNavigation : true,
     slidesNavigation : false
   });
-
-  // sponsors
-
-  $('#cmsms_clients_slider55').cmsmsClientsSlider( {
-    sliderBlock : '#cmsms_clients_slider55',
-    sliderItems : '.cmsms_clients_items',
-    clientsInPage : 4
-  } );
 }); //ready
